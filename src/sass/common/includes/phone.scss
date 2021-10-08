@@ -1,0 +1,37 @@
+.phone {
+  display: flex;
+  flex-direction: column;
+
+  width: fit-content;
+
+  &:not(:last-child) {
+    margin-right: 13px;
+  }
+
+  &__number {
+    font-weight: 500;
+    font-size: 2rem;
+    color: $color-primary-black;
+  }
+
+  &__worktime {
+    color: $color-secondary-gray;
+    letter-spacing: 0.04em;
+    font-size: 12px;
+  }
+
+  &__callback {
+    font-size: 1.4rem;
+    color: $color-primary-blue;
+    border-bottom: 1px dashed;
+
+    align-self: flex-end;
+
+    transition: color 0.1s linear, border-color 0.1s linear;
+
+    &:hover {
+      color: darken($color-primary-blue, 15);
+      border-color: darken($color-primary-blue, 15);
+    }
+  }
+}

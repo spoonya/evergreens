@@ -1,2 +1,20 @@
 mixin icon(className, name)
   svg(class= className): use(xlink:href="images/sprite.svg#" + name)
+
+mixin logo
+  .logo
+    p.logo__name Grinetto
+    p.logo__descrip Озеленение помещений в Москве под ключ
+
+mixin phone(obj)
+  .phone
+    a.phone__number(href="tel:89032038690") 8 903 203-86-90
+    if obj.withCallback
+      button.phone__callback Обратный звонок
+    else
+      p.phone__worktime Ежедневно с 9.00 до 20.00
+
+mixin modalButton(target, txt, icon= null)
+  button.button(data-modal-target= target)= txt
+    if icon
+      +icon('button__icon', icon)

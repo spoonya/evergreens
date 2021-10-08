@@ -4,3 +4,50 @@ include includes/index/mixins
 
 block content
   main
+    //Intro
+    section.intro
+      .intro__content(style="background-image: url('images/intro/bg.png');")
+        .container
+          .intro__inner
+            .intro__titles
+              h1.intro__title
+                |Озеленение офисов, заведений horeca и частных домов&nbsp;
+                span искусственными, живыми и стабилизированными растениями
+              h2.intro__subtitle Поможем создать уют в помещении, разделить  на зоны, скрыть несовершенства планировки и подчеркнуть интерьер
+            .intro__catalog-wrapper
+              .intro__catalog
+                img.intro__catalog-img(src="images/intro/catalog.png", alt="Каталог")
+                .intro__catalog-content
+                  h3.intro__catalog-title
+                    |Скачайте&nbsp;
+                    span каталог  30 популярных примеров озеленения&nbsp;
+                    |в 2021 году
+                  +modalButton(null, 'Получить каталог примеров', 'hand')
+      .intro__features
+        .container
+          ul.intro__features-list
+            li.intro__features-item
+              h3.intro__features-item-title
+                |Опытные фитодизайнеры подбирают растения, которые&nbsp;
+                span хорошо приживаются и сохраняют первозданную красоту более 5 лет
+              .intro__features-item-img
+                img(src="images/intro/service-1.png", alt="")
+            li.intro__features-item
+              h3.intro__features-item-title
+                |Изготавливаем искусственные&nbsp;
+                span растения по индивидуальным размерам в любом количестве&nbsp;
+                |на собственном производстве
+              .intro__features-item-img
+                img(src="images/intro/service-2.png", alt="")
+            li.intro__features-item
+              h3.intro__features-item-title
+                span Профессиональный уход за всеми видами растений&nbsp;
+                |от наших биологов и фитопотологов
+              .intro__features-item-img
+                img(src="images/intro/service-3.png", alt="")
+            li.intro__features-item
+              h3.intro__features-item-title
+                span Фиксированные сроки и стоимость&nbsp;
+                |без раздувания сметы и скрытых платежей по договору
+              .intro__features-item-img
+                img(src="images/intro/service-4.png", alt="")
