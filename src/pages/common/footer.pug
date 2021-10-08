@@ -1,1 +1,23 @@
 footer.footer
+  .footer__top
+    .container
+      .footer__inner
+        +logo
+        .footer__social
+          p.footer__social-txt Мы в соц. сетях
+          ul.footer__social-list
+            li.footer__social-item
+              a(href="#" aria-label="facebook" target="_blank" rel="noopener"): img.footer__social-icon(src="images/icons/facebook-sm.png", alt="")
+            li.footer__social-item
+              a(href="#" aria-label="vkontakte" target="_blank" rel="noopener"): img.footer__social-icon(src="images/icons/vk-sm.png", alt="")
+            li.footer__social-item
+              a(href="#" aria-label="instagram" target="_blank" rel="noopener"): img.footer__social-icon(src="images/icons/insta-sm.png", alt="")
+            li.footer__social-item
+              a(href="#" aria-label="youtube" target="_blank" rel="noopener"): img.footer__social-icon(src="images/icons/yt-sm.png", alt="")
+        a.footer__mail(href="mailto:grinetto@lalala.com") grinetto@lalala.com
+        +phone({withCallback: true})
+  .footer__bot
+    .container
+      .footer__inner
+        p.footer__info ООО &laquo;Сипуни Рус&raquo; ОГРН 1087746620720
+        button.footer__button Политика конфиденциальности

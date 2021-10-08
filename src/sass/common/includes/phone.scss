@@ -30,8 +30,8 @@
     transition: color 0.1s linear, border-color 0.1s linear;
 
     &:hover {
-      color: darken($color-primary-blue, 15);
-      border-color: darken($color-primary-blue, 15);
+      color: darken($color-primary-blue, 20);
+      border-color: darken($color-primary-blue, 20);
     }
   }
 }
