@@ -1,4 +1,8 @@
 .director {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
   margin-bottom: 8.5rem;
 }
 
@@ -136,7 +140,8 @@
 
   &-signature {
     object-fit: contain;
-    max-height: 63px;
+    max-width: 10.7rem;
+    width: 100%;
   }
 
   &-message {
@@ -153,6 +158,12 @@
 
     background-color: $color-primary-orange;
     border-radius: $border-r-lg;
+
+    transition: filter 0.1s linear;
+
+    &:hover {
+      filter: brightness(97%);
+    }
 
     &-icon {
       max-width: 6rem;

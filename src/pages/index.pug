@@ -52,6 +52,51 @@ block content
               .intro__features-item-img
                 img(src="images/intro/service-4.png", alt="")
 
+    //Prevent
+    section.prevent(style="background-image: url('images/prevent/bg.png');")
+      .container
+        h2.prevent__title
+          span Предотвращаем косяки,&nbsp;
+          |с которыми сталкиваются 84% заказчиков
+        .prevent__slider
+          #swiper-prevent.swiper-container
+            .swiper-wrapper
+              .prevent__slider-item.swiper-slide
+                img.prevent__slider-item-img(src="images/prevent/prevent-1.png", alt="")
+                p.prevent__slider-item-txt В жизни растение оказывается больше, чем в дизайне - мешает посетителям и сотрудникам
+              .prevent__slider-item.swiper-slide
+                img.prevent__slider-item-img(src="images/prevent/prevent-2.png", alt="")
+                p.prevent__slider-item-txt На месте крепления панно или фитостены проходят важные коммуникации
+              .prevent__slider-item.swiper-slide
+                img.prevent__slider-item-img(src="images/prevent/prevent-3.png", alt="")
+                p.prevent__slider-item-txt Потолок не выдерживает вес подвесного озеленения, которое нарисовал дизайнер
+          .swiper-button-prev
+          .swiper-button-next
+        .prevent__inner
+          .prevent__item
+            .prevent__content
+              h3.prevent__item-title
+                span Чтобы избежать подобных ошибок,&nbsp;
+                |перед разработкой дизайна озеленения на объект выезжает наш замерщик
+              ul.list
+                li Он замеряет помещения и конструкции для растения
+                li Рассчитывает нагрузку несущих поверхностей
+                li Указывает в чертеже все коммуникации, чтобы знать где можно делать вертикальное
+            .prevent__item-img
+              img(src="images/prevent/prevent-4.png", alt="")
+              +modalButton(null, 'Вызвать замерщика', null)
+          .prevent__item
+            .prevent__content
+              h3.prevent__item-title
+                span Дизайнер подбирает растения и&nbsp;
+                |разрабатывает проект озеленения строго в соответствии с замерами
+              ul.list
+                li С помощью программы высчитывает нагрузку панно, фитостены и каждого кашпо
+                li Сопоставляет размеры растений и количеством места в вашем помещении
+            .prevent__item-img
+              img(src="images/prevent/prevent-5.png", alt="")
+              +modalButton(null, 'Заказать проект', null)
+
     //Director
     section.director(style="background-image: url('images/director/bg.png');")
       .container
