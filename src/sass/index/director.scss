@@ -1,0 +1,162 @@
+.director {
+  margin-bottom: 8.5rem;
+}
+
+.director__group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}
+
+.director__content {
+  max-width: 57.4rem;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-right: 3rem;
+  }
+}
+
+.director__title {
+  font-size: 2.6rem;
+  line-height: 1.3;
+
+  max-width: 56rem;
+
+  margin-bottom: 4.6rem;
+
+  span {
+    font-weight: 500;
+  }
+
+  &--small {
+    max-width: 49rem;
+  }
+}
+
+.director__list {
+  &--small {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .director__item {
+      width: 47%;
+
+      &-txt {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+.director__item {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  &-icon {
+    min-width: 7rem;
+    min-height: 7rem;
+    max-width: 7rem;
+    max-height: 7rem;
+
+    margin-right: 2rem;
+  }
+
+  &-txt {
+    font-size: 1.8rem;
+    line-height: 1.3;
+
+    span {
+      font-weight: 500;
+    }
+  }
+}
+
+.director__content-img {
+  border-radius: $border-r-lg;
+
+  max-width: 57rem;
+  width: 100%;
+}
+
+.director__img {
+  width: 100%;
+  max-width: unset;
+}
+
+.director__about {
+  position: relative;
+
+  max-width: 50.2rem;
+  width: 100%;
+}
+
+.director__info {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  background-color: $color-primary-white;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.03);
+  border-radius: $border-r-lg;
+
+  max-width: 37rem;
+  width: 100%;
+}
+
+.director__descrip {
+  display: flex;
+  align-items: center;
+
+  padding: 2.5rem 1.3rem 2rem 2.5rem;
+
+  &-txt {
+    margin-right: 8px;
+  }
+
+  &-name {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  &-post {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  &-signature {
+    object-fit: contain;
+    max-height: 63px;
+  }
+
+  &-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 1.8rem;
+    color: $color-primary-white;
+
+    padding-left: 4.4rem;
+
+    width: 100%;
+
+    background-color: $color-primary-orange;
+    border-radius: $border-r-lg;
+
+    &-icon {
+      max-width: 6rem;
+      max-height: 6rem;
+    }
+  }
+}
