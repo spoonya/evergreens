@@ -4,6 +4,7 @@
   background-size: cover;
 
   margin-bottom: 8.5rem;
+  padding-bottom: 9rem;
 }
 
 .director__group {
@@ -47,6 +48,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: baseline;
 
     .director__item {
       width: 47%;

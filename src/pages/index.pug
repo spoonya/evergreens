@@ -52,6 +52,43 @@ block content
               .intro__features-item-img
                 img(src="images/intro/service-4.png", alt="")
 
+    //Сare
+    section.care(style="background-image: url('images/care/bg.png');")
+      .container
+        .care__content
+          h2.care__title
+            span Растения всегда&nbsp;
+            |выглядят так словно их посадили только вчера
+          h3.care__subtitle
+            |благодаря профессиональному уходу&nbsp;
+            span от специалистов Grinetti
+          ul.care__list
+            li.care__item
+              +icon('care__item-icon', 'check')
+              p
+                span Санитарная обработка&nbsp;
+                |живых растений
+            li.care__item
+              +icon('care__item-icon', 'check')
+              p
+                span Лечение&nbsp;
+                |заболевших растений, борьба с вредителями
+            li.care__item
+              +icon('care__item-icon', 'check')
+              p
+                span Пересадка растения&nbsp;
+                |в случае гибели или потери декоративных качеств
+            li.care__item
+              +icon('care__item-icon', 'check')
+              p
+                span Очистка листвы от&nbsp;
+                |пыли и нанесение на них специальных средств для блеска
+          .care__group
+            +modalButton(null, 'Рассчитать стоимость ухода', null)
+            .care__present
+              span Месяц в подарок
+              |при заказе озеленения под ключ
+
     //Prevent
     section.prevent(style="background-image: url('images/prevent/bg.png');")
       .container
