@@ -52,6 +52,57 @@ block content
               .intro__features-item-img
                 img(src="images/intro/service-4.png", alt="")
 
+    //About
+    section.about(style="background-image: url('images/about/bg.png');")
+      .container
+        h2.about__title
+          |Почему наши растения сохраняют&nbsp;
+          span первозданную красоту более 5 лет
+        .about__inner
+          .about__item
+            h3.about__item-title
+              |Фитодизайнеры подбирают растения,&nbsp;
+              span которые точно приживутся в ваших помещениях
+            p.about__item-descrip Сначала наш биолог выезжает на объект и оценивает условия в  помещениях:
+            ul.list
+              li
+                p
+                  span Тестирует&nbsp;
+                  |качество воздуха
+              li
+                p
+                  span Проверяет&nbsp;
+                  |есть ли сквозняки и в каких местах
+              li
+                p
+                  span Замеряет у&nbsp;
+                  |среднюю температур
+              li
+                p
+                  span Определяет&nbsp;
+                  |источники отопления и его интенсивность
+            p.about__item-descrip Он передает информацию фитодизайнерам, которые подбирают подходящие для Вас растения
+            +modalButton(null, 'Подобрать живые растения', null)
+          .about__item.about__item--small
+            img.about__item-img(src="images/about/girl.png", alt="")
+            h3.about__item-title
+              |Вы получите здоровые и жизнеспособные растения,&nbsp;
+              span которые проходят систему контроля фитопатолога
+            ul.list
+              li
+                p
+                  span 80% растений завозим из Голландии,&nbsp;
+                  |остальные покупаем в проверенных российских питомниках
+              li
+                p
+                  span Фитопотолог проверяет все растения&nbsp;
+                  |на отсутствие вредителей и болезней
+                  |есть ли сквозняки и в каких местах
+              li
+                p
+                  |Полученные растения акклиматизируем к новым условиям с помощью фитоламп.&nbsp;
+                  span Только после этого привозим Вам
+
     //Сare
     section.care(style="background-image: url('images/care/bg.png');")
       .container
@@ -61,7 +112,7 @@ block content
             |выглядят так словно их посадили только вчера
           h3.care__subtitle
             |благодаря профессиональному уходу&nbsp;
-            span от специалистов Grinetti
+            span от специалистов Grinetto
           ul.care__list
             li.care__item
               +icon('care__item-icon', 'check')
@@ -161,7 +212,7 @@ block content
               .director__descrip
                 .director__descrip-txt
                   p.director__descrip-name Наталья Иванова
-                  p.director__descrip-post Основатель и руководитель студии озеленения GrinettI
+                  p.director__descrip-post Основатель и руководитель студии озеленения Grinetto
                 img.director__descrip-signature(src="images/director/signature.png", alt="")
               button.director__descrip-message
                 |Обращение руководителя
