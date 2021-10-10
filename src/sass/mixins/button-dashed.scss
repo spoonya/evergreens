@@ -1,0 +1,14 @@
+@mixin button-dashed {
+  font-size: 1.4rem;
+  color: $color-primary-blue;
+  border-bottom: 1px dashed;
+
+  align-self: flex-end;
+
+  transition: color 0.1s linear, border-color 0.1s linear;
+
+  &:hover {
+    color: darken($color-primary-blue, 20);
+    border-color: darken($color-primary-blue, 20);
+  }
+}

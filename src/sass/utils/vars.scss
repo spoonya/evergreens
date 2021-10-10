@@ -26,6 +26,9 @@ $color-quaternary-gray: #838383;
 
 $color-quinary-gray: #b5b5b5;
 
+$color-form-success: $color-primary-green;
+$color-form-error: #d4251f;
+$color-form-input: darken($color-secondary-white, 5);
 // Fonts
 $font-primary: 'TTNorms', sans-serif;
 //Border

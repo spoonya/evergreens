@@ -36,7 +36,7 @@ li {
   padding: 0;
 }
 
-li {
+ul {
   list-style: none;
 }
 
@@ -67,7 +67,7 @@ select {
   }
 
   &:focus-within {
-    border-color: $color-primary-green;
+    border-color: $color-primary-orange;
   }
 }
 
@@ -79,21 +79,21 @@ textarea {
   outline: 0;
 
   &:focus {
-    border-color: $color-primary-green;
+    border-color: $color-primary-orange;
   }
 }
 
 input {
   font: inherit;
 
-  color: $color-primary-green;
+  color: $color-primary-black;
 
   border: none;
   background: none;
   outline: 0;
 
   &:focus {
-    border-color: $color-primary-green;
+    border-color: $color-primary-orange;
   }
 }
 
@@ -105,11 +105,8 @@ input[type='button'] {
 
 input::placeholder {
   opacity: 1;
-  color: $color-primary-black;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: $color-primary-gray;
   font-size: 14px;
-  font-weight: 500;
 }
 
 button {

@@ -61,6 +61,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "@fancyapps/ui": "^4.0.5",
     "core-js": "^2.6.12",
     "intersection-observer": "^0.12.0",
     "lozad": "^1.16.0",

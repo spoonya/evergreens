@@ -52,8 +52,108 @@ block content
               .intro__features-item-img
                 img(src="images/intro/service-4.png", alt="")
 
+    //Catalog
+    section.catalog(style="background-image: url('images/catalog/bg.png');")
+      .container
+        h2.catalog__title
+          span Готовые композиции растений&nbsp;
+          |в кашпо от дизайнеров Grinetto
+        .catalog__slider
+          #swiper-catalog.swiper-container
+            .swiper-wrapper
+              .catalog__item.swiper-slide
+                span.catalog__item-mark с автополивом
+                img.catalog__item-img(src="images/catalog/catalog-1.png", width="270", height="330" alt="")
+                .catalog__item-content
+                  span.catalog__item-sale -20%
+                  .catalog__item-title Райский сад
+                  ul.list-disc
+                    li: span Живые гортензии
+                    li: span Стабилизиорванные лиственницы
+                  p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
+                  +modalButton(null, 'Рассчитать стоимость')
+              .catalog__item.swiper-slide
+                img.catalog__item-img(src="images/catalog/catalog-2.png", width="270", height="330" alt="")
+                .catalog__item-content
+                  .catalog__item-title Райский сад
+                  ul.list-disc
+                    li: span Живые гортензии
+                    li: span Стабилизиорванные лиственницы
+                  p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
+                  +modalButton(null, 'Рассчитать стоимость')
+              .catalog__item.swiper-slide
+                img.catalog__item-img(src="images/catalog/catalog-3.png", width="270", height="330" alt="")
+                .catalog__item-content
+                  .catalog__item-title Райский сад
+                  ul.list-disc
+                    li: span Живые гортензии
+                    li: span Стабилизиорванные лиственницы
+                  p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
+                  +modalButton(null, 'Рассчитать стоимость')
+              .catalog__item.swiper-slide
+                img.catalog__item-img(src="images/catalog/catalog-1.png", width="270", height="330" alt="")
+                .catalog__item-content
+                  .catalog__item-title Райский сад
+                  ul.list-disc
+                    li: span Живые гортензии
+                    li: span Стабилизиорванные лиственницы
+                  p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
+                  +modalButton(null, 'Рассчитать стоимость')
+            .swiper-button-prev
+            .swiper-button-next
+        .catalog__inner
+          .catalog__content
+            h2.catalog__title
+              span Скачайте каталог&nbsp;
+              |со 100 примерами озеленения под ключ и готовых композиций с описанием и ценами
+            h3.catalog__subtitle
+              span и получите гарантированную скидку 5%
+              |на озеленение вашего объекта
+            .catalog__info
+              p.catalog__info-txt В каталоге примеры озеленения для:
+              ul.list-disc
+                li Офисных помещений
+                li ТРЦ и бизнес-центров
+                li Заведений horeca
+                li Частных домов
+              .catalog__info-icon
+                +icon(null, 'pdf')
+          .catalog__form
+            .catalog__form-inner
+              h4.catalog__form-title Куда прислать каталог?
+              form#form-catalog.form(action="#" method="POST")
+                .form__group
+                  .form__control
+                    span.form__error
+                    label.form__checkbox-wrapper
+                      input.form__checkbox(value="whatsapp" name="form-catalog-messenger" type="radio" data-form-messenger checked)
+                      span.form__checkbox-styled.form__checkbox-styled--rect
+                      span.form__checkbox-txt WhatsApp
+                  .form__control
+                    span.form__error
+                    label.form__checkbox-wrapper
+                      input.form__checkbox(value="telegram" name="form-catalog-messenger" type="radio" data-form-messenger)
+                      span.form__checkbox-styled.form__checkbox-styled--rect
+                      span.form__checkbox-txt Telegram
+                  .form__control
+                    span.form__error
+                    label.form__checkbox-wrapper
+                      input.form__checkbox(value="e-mail" name="form-catalog-messenger" type="radio" data-form-messenger)
+                      span.form__checkbox-styled.form__checkbox-styled--rect
+                      span.form__checkbox-txt E-mail
+                .form__control
+                  span.form__error
+                  input.form__input(name="form-catalog-phone" type="tel" placeholder="Введите Ваш телефон" data-form-phone)
+                .form__control
+                  span.form__error
+                  input.form__input(name="form-catalog-email" type="email" placeholder="Введите Ваш e-mail" data-form-email)
+                +submitButton('Получить каталог')
+                .form__disclaimer
+                  p Нажимая на кнопку, Вы соглашаетесь
+                  button с политикой конфиденциальности сайта
+
     //Compare
-    section.compare
+    section.compare(style="background-image: url('images/compare/bg.png');")
       .container
         h2.compare__title
           span Посмотрите, как мы помогаем создать уют&nbsp;
@@ -74,7 +174,7 @@ block content
               |Фитодизайнеры подбирают растения,&nbsp;
               span которые точно приживутся в ваших помещениях
             p.about__item-descrip Сначала наш биолог выезжает на объект и оценивает условия в  помещениях:
-            ul.list
+            ul.list-rect
               li
                 p
                   span Тестирует&nbsp;
@@ -98,7 +198,7 @@ block content
             h3.about__item-title
               |Вы получите здоровые и жизнеспособные растения,&nbsp;
               span которые проходят систему контроля фитопатолога
-            ul.list
+            ul.list-rect
               li
                 p
                   span 80% растений завозим из Голландии,&nbsp;
@@ -176,7 +276,7 @@ block content
               h3.prevent__item-title
                 span Чтобы избежать подобных ошибок,&nbsp;
                 |перед разработкой дизайна озеленения на объект выезжает наш замерщик
-              ul.list
+              ul.list-rect
                 li Он замеряет помещения и конструкции для растения
                 li Рассчитывает нагрузку несущих поверхностей
                 li Указывает в чертеже все коммуникации, чтобы знать где можно делать вертикальное
@@ -188,7 +288,7 @@ block content
               h3.prevent__item-title
                 span Дизайнер подбирает растения и&nbsp;
                 |разрабатывает проект озеленения строго в соответствии с замерами
-              ul.list
+              ul.list-rect
                 li С помощью программы высчитывает нагрузку панно, фитостены и каждого кашпо
                 li Сопоставляет размеры растений и количеством места в вашем помещении
             .prevent__item-img

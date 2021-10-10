@@ -110,6 +110,8 @@
 }
 
 .intro__features-item {
+  @include decorator-bot;
+
   position: relative;
 
   display: flex;
@@ -124,25 +126,6 @@
 
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.07);
   border-radius: $border-r-sm;
-
-  &::after {
-    position: absolute;
-
-    content: '';
-
-    left: 50%;
-    bottom: -10px;
-
-    transform: translateX(-50%);
-
-    width: 90%;
-    height: 10px;
-
-    border-bottom-left-radius: $border-r-lg;
-    border-bottom-right-radius: $border-r-lg;
-
-    background: $color-primary-orange;
-  }
 
   &-title {
     font-size: 1.6rem;

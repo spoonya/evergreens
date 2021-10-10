@@ -1,0 +1,179 @@
+.form {
+  textarea {
+    height: 12rem;
+  }
+}
+
+.form__group {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 2rem;
+
+  .form__control {
+    &:not(:last-child) {
+      margin-right: 19px;
+    }
+  }
+}
+
+.form__control {
+  position: relative;
+
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-bottom: 2rem;
+  }
+}
+
+.form__control.error {
+  .form__error {
+    visibility: visible;
+  }
+
+  .form__input {
+    border-color: $color-form-error;
+  }
+}
+
+.form__control.success {
+  .form__input {
+    border-color: $color-form-success;
+  }
+}
+
+.form__error {
+  position: absolute;
+  top: -17px;
+  left: 0;
+
+  font-size: 13px;
+
+  color: $color-form-error;
+
+  visibility: hidden;
+}
+
+.form__input {
+  padding: 2.15rem;
+
+  width: 100%;
+
+  border-radius: $border-r-lg;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.08);
+  border: 1px solid $color-form-input;
+}
+
+.form__checkbox-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.form__checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.form__checkbox-styled {
+  position: relative;
+
+  display: inline-block;
+
+  margin-right: 10px;
+
+  min-width: 18px;
+  min-height: 18px;
+
+  background: $color-form-input;
+
+  transition: opacity 0.1s linear;
+
+  border-radius: 50%;
+
+  &::before {
+    position: absolute;
+
+    display: block;
+
+    content: '';
+
+    top: 50%;
+    left: 50%;
+
+    width: 10px;
+    height: 10px;
+
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    background-color: $color-primary-orange;
+    border-radius: 50%;
+  }
+
+  &--rect {
+    border-radius: 4px;
+    background-color: $color-primary-white;
+    border: 1px solid $color-form-input;
+
+    &::before {
+      position: absolute;
+
+      display: block;
+
+      content: '';
+
+      top: 50%;
+      left: 50%;
+
+      width: 10px;
+      height: 10px;
+
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      background-color: $color-primary-orange;
+      border-radius: 2px;
+    }
+
+    & + .form__checkbox-txt {
+      color: $color-primary-gray;
+    }
+  }
+}
+
+.form__checkbox:checked + .form__checkbox-styled::before {
+  opacity: 1;
+}
+
+.form__checkbox-txt {
+  user-select: none;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.form__disclaimer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p,
+  button {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  p {
+    color: $color-primary-gray;
+  }
+
+  button {
+    @include button-dashed;
+
+    align-self: unset;
+  }
+}

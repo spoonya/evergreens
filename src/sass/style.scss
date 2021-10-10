@@ -3,17 +3,23 @@
 
 @import 'mixins/media';
 @import 'mixins/outline';
+@import 'mixins/decorator-bot';
+@import 'mixins/button-dashed';
 
 @import 'common/global';
 @import 'common/header';
 @import 'common/footer';
 @import 'common/social';
-@import 'common/list';
+@import 'common/list-rect';
+@import 'common/list-disc';
+@import 'common/swiper';
+@import 'common/form';
 @import 'common/includes/logo';
 @import 'common/includes/phone';
 @import 'common/includes/button';
 
 @import 'index/intro';
+@import 'index/catalog';
 @import 'index/compare';
 @import 'index/about';
 @import 'index/care';

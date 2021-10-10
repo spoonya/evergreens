@@ -9,13 +9,22 @@
   display: flex;
   align-items: center;
 
-  padding: 2.6rem 2.5rem;
+  padding: 1.625em;
 
   background-color: $color-primary-orange;
   border-radius: $border-r-lg;
   box-shadow: 0 3px $color-tertiary-orange;
 
   transition: color 0.1s linear, background-color 0.1s linear;
+
+  &--submit {
+    width: 100%;
+    justify-content: center;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
 
   &:hover {
     background-color: darken($color-primary-orange, 5);
