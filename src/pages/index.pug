@@ -392,6 +392,69 @@ block content
                   span Если у Вас есть согласованная смета, то мы подготовим проект строго в ее рамках&nbsp;
                   |без малейшего увеличения стоимости
 
+    //Drafts
+    section.drafts
+      h2.drafts__title.container
+        |Свежие проекты&nbsp;
+        span Grinetto
+      .drafts__inner
+        .drafts__container.drafts__container--sm
+          .drafts__item.drafts__item--lg
+            img.drafts__item-img(src="images/drafts/draft-1.png", width="780", height="510", alt="")
+            .drafts__item-content
+              ul.drafts__item-list
+                li Натуральные
+                li Панно
+              +modalButton(null, 'Рассчитать стоимость')
+          .drafts__item.drafts__item--lg
+            img.drafts__item-img(src="images/drafts/draft-2.png", width="780", height="510", alt="")
+            .drafts__item-content
+              ul.drafts__item-list
+                li Натуральные
+                li Панно
+              +modalButton(null, 'Рассчитать стоимость')
+        .drafts__container.drafts__container--lg
+          .drafts__container-inner
+            .drafts__item.drafts__item--xl
+              img.drafts__item-img(src="images/drafts/draft-3.png", width="680", height="600" alt="")
+              .drafts__item-content
+                ul.drafts__item-list
+                  li Натуральные
+                  li Панно
+                +modalButton(null, 'Рассчитать стоимость')
+            .drafts__item.drafts__item--md
+              img.drafts__item-img(src="images/drafts/draft-4.png", width="460", height="600",  alt="")
+              .drafts__item-content
+                ul.drafts__item-list
+                  li Натуральные
+                  li Панно
+                +modalButton(null, 'Рассчитать стоимость')
+          .drafts__container-inner
+            .drafts__item.drafts__item--sm
+              img.drafts__item-img(src="images/drafts/draft-5.png", width="380", height="420", alt="")
+              .drafts__item-content
+                ul.drafts__item-list
+                  li Натуральные
+                  li Панно
+                +modalButton(null, 'Рассчитать стоимость')
+            .drafts__item.drafts__item--sm
+              img.drafts__item-img(src="images/drafts/draft-6.png", width="380", height="420", alt="")
+              .drafts__item-content
+                ul.drafts__item-list
+                  li Натуральные
+                  li Панно
+                +modalButton(null, 'Рассчитать стоимость')
+            .drafts__item.drafts__item--sm
+              img.drafts__item-img(src="images/drafts/draft-7.png", width="380", height="420", alt="")
+              .drafts__item-content
+                ul.drafts__item-list
+                  li Натуральные
+                  li Панно
+                +modalButton(null, 'Рассчитать стоимость')
+      button.drafts__more.container
+        +icon('drafts__more-icon', 'refresh')
+        |Показать ещё
+
     //Social
     section.social
       .container
