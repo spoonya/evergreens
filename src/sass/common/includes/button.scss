@@ -11,11 +11,17 @@
 
   padding: 1.625em;
 
-  background-color: $color-primary-orange;
   border-radius: $border-r-lg;
   box-shadow: 0 3px $color-tertiary-orange;
+  background: rgb(250, 213, 83);
+  background: radial-gradient(
+    circle,
+    rgba(250, 213, 83, 1) 0%,
+    rgba(248, 231, 170, 1) 0%,
+    rgba(250, 213, 83, 1) 100%
+  );
 
-  transition: color 0.1s linear, background-color 0.1s linear;
+  transition: filter 0.1s linear;
 
   &--submit {
     width: 100%;
@@ -27,7 +33,7 @@
   }
 
   &:hover {
-    background-color: darken($color-primary-orange, 5);
+    filter: brightness(105%);
   }
 
   &__icon {
@@ -35,5 +41,7 @@
     height: 22px;
 
     margin-left: 16px;
+
+    filter: drop-shadow(0px 1px 1px rgba(255, 255, 255, 0.6));
   }
 }
