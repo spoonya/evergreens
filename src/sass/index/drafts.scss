@@ -113,11 +113,7 @@
 
       opacity: 0;
 
-<<<<<<< HEAD
       transition: opacity 0.1s linear, filter 0.1s linear;
-=======
-      transition: opacity 0.1s linear;
->>>>>>> fef12a33a6f0bbb4621ab09c37dba9b561091421
 
       @include media-desktop {
         font-size: 12px;
