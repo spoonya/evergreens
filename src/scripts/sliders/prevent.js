@@ -3,7 +3,7 @@ const swiperPrevent = new Swiper('#swiper-prevent', {
 
   loop: true,
 
-  spaceBetween: 20,
+  spaceBetween: 30,
 
   autoplay: {
     delay: 4000

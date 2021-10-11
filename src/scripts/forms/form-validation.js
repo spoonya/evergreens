@@ -29,18 +29,6 @@ class FormValidation {
             </div>`
     };
 
-    this.errors = {
-      emptyEmail: 'Введите E-mail',
-      emptyMsg: 'Введите сообщение',
-      emptyName: 'Введите имя',
-      emptyPhone: 'Введите номер',
-      invalidEmail: 'Некорректный E-mail',
-      invalidPhone: 'Введите номер в формате +375',
-      maxMessageLength: 'Не более 250 символов',
-      minMessageLength: 'Не менее 8 символов',
-      unchecked: 'Поле должно быть отмечено'
-    };
-
     this.formElements = {
       username: this.form.querySelector('[data-form-name]'),
       userPhone: this.form.querySelector('[data-form-phone]'),
@@ -51,19 +39,44 @@ class FormValidation {
 
     this.defaultConfig = {
       username: {
-        isRequired: true
+        isRequired: true,
+        errors: {
+          empty: 'Введите имя'
+        }
       },
       userPhone: {
-        isRequired: true
+        isRequired: true,
+        errors: {
+          empty: 'Введите номер',
+          invalid: 'Введите корректный номер'
+        }
       },
       userEmail: {
-        isRequired: true
+        isRequired: true,
+        errors: {
+          empty: 'Введите E-mail',
+          invalid: 'Некорректный E-mail'
+        }
       },
       userAgreement: {
-        isRequired: true
+        isRequired: true,
+        errors: {
+          unchecked: 'Поле должно быть отмечено'
+        }
       },
       userMsg: {
-        isRequired: true
+        isRequired: true,
+        maxLength: 250,
+        minLength: 8,
+        errors: {
+          empty: 'Введите сообщение',
+          getMaxLength(length) {
+            return `Не более ${length} символов`;
+          },
+          getMinLength(length) {
+            return `Не менее ${length} символов`;
+          }
+        }
       }
     };
 
@@ -86,7 +99,7 @@ class FormValidation {
 
     this.formElements.userPhone.value = phoneNumber;
 
-    const regex = /(\+375)(\d{2,4})(\d{6,7}$)/g;
+    const regex = /^((\+7|7|8)+([0-9]){10})$|\b\d{3}[-.]?\d{3}[-.]?\d{4}/g;
 
     return regex.test(String(phoneNumber));
   }
@@ -111,13 +124,9 @@ class FormValidation {
     formControl.classList.add(this.classes.success);
   }
 
-  _checkUsername(
-    username,
-    usernameValue,
-    { isRequired } = this.defaultConfig.username
-  ) {
-    if (isRequired && !usernameValue) {
-      this._setError(username, this.errors.emptyName);
+  _checkUsername(username, usernameValue, config) {
+    if (config.isRequired && !usernameValue) {
+      this._setError(username, config.errors.empty);
 
       return false;
     }
@@ -127,19 +136,15 @@ class FormValidation {
     return true;
   }
 
-  _checkUserPhone(
-    userPhone,
-    userPhoneValue,
-    { isRequired } = this.defaultConfig.userPhone
-  ) {
-    if (isRequired && !userPhoneValue) {
-      this._setError(userPhone, this.errors.emptyPhone);
+  _checkUserPhone(userPhone, userPhoneValue, config) {
+    if (config.isRequired && !userPhoneValue) {
+      this._setError(userPhone, config.errors.empty);
 
       return false;
     }
 
     if (userPhoneValue && !this._validatePhone(userPhoneValue)) {
-      this._setError(userPhone, this.errors.invalidPhone);
+      this._setError(userPhone, config.errors.invalid);
 
       return false;
     }
@@ -149,19 +154,15 @@ class FormValidation {
     return true;
   }
 
-  _checkUserEmail(
-    userEmail,
-    userEmailValue,
-    { isRequired } = this.defaultConfig.userEmail
-  ) {
-    if (isRequired && !userEmailValue) {
-      this._setError(userEmail, this.errors.emptyEmail);
+  _checkUserEmail(userEmail, userEmailValue, config) {
+    if (config.isRequired && !userEmailValue) {
+      this._setError(userEmail, config.errors.empty);
 
       return false;
     }
 
     if (userEmailValue && !this._validateEmail(userEmailValue)) {
-      this._setError(userEmail, this.errors.invalidEmail);
+      this._setError(userEmail, config.errors.invalid);
 
       return false;
     }
@@ -171,28 +172,21 @@ class FormValidation {
     return true;
   }
 
-  _checkUserMessage(
-    userMessage,
-    userMessageValue,
-    { isRequired } = this.defaultConfig.userMsg
-  ) {
-    const maxMessageLength = 250;
-    const minMessageLength = 8;
-
-    if (isRequired && !userMessageValue) {
-      this._setError(userMessage, this.errors.emptyMsg);
+  _checkUserMessage(userMessage, userMessageValue, config) {
+    if (config.isRequired && !userMessageValue) {
+      this._setError(userMessage, config.errors.empty);
 
       return false;
     }
 
-    if (userMessageValue.length && userMessageValue.length > maxMessageLength) {
-      this._setError(userMessage, this.errors.maxMessageLength);
+    if (userMessageValue.length && userMessageValue.length > config.maxLength) {
+      this._setError(userMessage, config.errors.getMaxLength(config.maxLength));
 
       return false;
     }
 
-    if (userMessageValue.length && userMessageValue.length < minMessageLength) {
-      this._setError(userMessage, this.errors.minMessageLength);
+    if (userMessageValue.length && userMessageValue.length < config.minLength) {
+      this._setError(userMessage, config.errors.getMinLength(config.minLength));
 
       return false;
     }
@@ -202,9 +196,9 @@ class FormValidation {
     return true;
   }
 
-  _checkAgreement(checkbox) {
-    if (!checkbox.checked) {
-      this._setError(checkbox, this.errors.unchecked);
+  _checkAgreement(checkbox, config) {
+    if (!checkbox.checked && config.isRequired) {
+      this._setError(checkbox, config.errors.unchecked);
 
       return false;
     }
@@ -322,7 +316,12 @@ class FormValidation {
         );
 
       if (this.formElements.userAgreement) {
-        isValid.push(this._checkAgreement(this.formElements.userAgreement));
+        isValid.push(
+          this._checkAgreement(
+            this.formElements.userAgreement,
+            config.userAgreement
+          )
+        );
       }
 
       if (isValid.includes(false)) {

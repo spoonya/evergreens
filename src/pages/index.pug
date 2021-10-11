@@ -91,7 +91,7 @@ block content
                   p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
                   +modalButton(null, 'Рассчитать стоимость')
               .catalog__item.swiper-slide
-                img.catalog__item-img(src="images/catalog/catalog-1.png", width="270", height="330" alt="")
+                img.catalog__item-img(src="images/catalog/catalog-2.png", width="270", height="330" alt="")
                 .catalog__item-content
                   .catalog__item-title Райский сад
                   ul.list-disc
@@ -121,7 +121,7 @@ block content
           .catalog__form
             .catalog__form-inner
               h4.catalog__form-title Куда прислать каталог?
-              form#form-catalog.form(action="#" method="POST")
+              form#form-catalog.form(action="#" method="POST" name="Каталог")
                 .form__group
                   .form__control
                     span.form__error
@@ -212,6 +212,45 @@ block content
                 p
                   |Полученные растения акклиматизируем к новым условиям с помощью фитоламп.&nbsp;
                   span Только после этого привозим Вам
+
+    //Gains
+    section.gains(style="background-image: url('images/gains/bg.png');")
+      .container
+        .gains__inner
+          .gains__descrip
+            h2.gains__title
+              |Искусственные растения также тщательно проверяются,&nbsp;
+              span чтобы Вы получили лучшие экземпляры
+            h3.gains__subtitle Заказываем образцы, чтобы проверить качество каждого экземпляра согласно эталонам качества и журналу несоответствия
+            +modalButton(null, 'Подобрать искуственные растения')
+          .gains__img
+            img(src="images/gains/plants.png", width="1004", height="695", alt="")
+            .gains__content
+              .gains__item.gains__item--top-left
+                +plusIcon('gains__item-icon')
+                p.gains__item-content
+                  span Отсутствует&nbsp;
+                  |едкий химический запах
+              .gains__item.gains__item--top-right
+                +plusIcon('gains__item-icon')
+                p.gains__item-content
+                  span Отсутствует&nbsp;
+                  |едкий химический запах
+              .gains__item.gains__item--center
+                +plusIcon('gains__item-icon')
+                p.gains__item-content
+                  span Отсутствует&nbsp;
+                  |едкий химический запах
+              .gains__item.gains__item--bot-left
+                +plusIcon('gains__item-icon')
+                p.gains__item-content
+                  span Отсутствует&nbsp;
+                  |едкий химический запах
+              .gains__item.gains__item--bot-right
+                +plusIcon('gains__item-icon')
+                p.gains__item-content
+                  span Отсутствует&nbsp;
+                  |едкий химический запах
 
     //Сare
     section.care(style="background-image: url('images/care/bg.png');")
