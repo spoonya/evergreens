@@ -5,6 +5,12 @@ const swiperPrevent = new Swiper('#swiper-prevent', {
 
   spaceBetween: 30,
 
+  preloadImages: false,
+  lazy: {
+    loadPrevNext: true
+  },
+  watchSlidesVisibility: true,
+
   autoplay: {
     delay: 4000
   },

@@ -16,7 +16,7 @@ block content
               h2.intro__subtitle Поможем создать уют в помещении, разделить  на зоны, скрыть несовершенства планировки и подчеркнуть интерьер
             .intro__catalog-wrapper
               .intro__catalog
-                img.intro__catalog-img(src="images/intro/catalog.png", alt="Каталог")
+                img.intro__catalog-img(src="images/intro/catalog.png", width="208", height="202", alt="Каталог")
                 .intro__catalog-content
                   h3.intro__catalog-title
                     |Скачайте&nbsp;
@@ -31,29 +31,29 @@ block content
                 |Опытные фитодизайнеры подбирают растения, которые&nbsp;
                 span хорошо приживаются и сохраняют первозданную красоту более 5 лет
               .intro__features-item-img
-                img(src="images/intro/service-1.png", alt="")
+                img.lozad(data-src="images/intro/service-1.png", width="270", height="258", alt="")
             li.intro__features-item
               h3.intro__features-item-title
                 |Изготавливаем искусственные&nbsp;
                 span растения по индивидуальным размерам в любом количестве&nbsp;
                 |на собственном производстве
               .intro__features-item-img
-                img(src="images/intro/service-2.png", alt="")
+                img.lozad(data-src="images/intro/service-2.png", width="270", height="258", alt="")
             li.intro__features-item
               h3.intro__features-item-title
                 span Профессиональный уход за всеми видами растений&nbsp;
                 |от наших биологов и фитопотологов
               .intro__features-item-img
-                img(src="images/intro/service-3.png", alt="")
+                img.lozad(data-src="images/intro/service-3.png", width="270", height="258", alt="")
             li.intro__features-item
               h3.intro__features-item-title
                 span Фиксированные сроки и стоимость&nbsp;
                 |без раздувания сметы и скрытых платежей по договору
               .intro__features-item-img
-                img(src="images/intro/service-4.png", alt="")
+                img.lozad(data-src="images/intro/service-4.png", width="270", height="258", alt="")
 
     //Catalog
-    section.catalog(style="background-image: url('images/catalog/bg.png');")
+    section.catalog.lozad(data-background-image='images/catalog/bg.png')
       .container
         h2.catalog__title
           span Готовые композиции растений&nbsp;
@@ -63,7 +63,7 @@ block content
             .swiper-wrapper
               .catalog__item.swiper-slide
                 span.catalog__item-mark с автополивом
-                img.catalog__item-img(src="images/catalog/catalog-1.png", width="270", height="330" alt="")
+                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-1.png", width="270", height="330" alt="")
                 .catalog__item-content
                   span.catalog__item-sale -20%
                   .catalog__item-title Райский сад
@@ -73,7 +73,7 @@ block content
                   p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
                   +modalButton(null, 'Рассчитать стоимость')
               .catalog__item.swiper-slide
-                img.catalog__item-img(src="images/catalog/catalog-2.png", width="270", height="330" alt="")
+                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-2.png", width="270", height="330" alt="")
                 .catalog__item-content
                   .catalog__item-title Райский сад
                   ul.list-disc
@@ -82,7 +82,7 @@ block content
                   p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
                   +modalButton(null, 'Рассчитать стоимость')
               .catalog__item.swiper-slide
-                img.catalog__item-img(src="images/catalog/catalog-3.png", width="270", height="330" alt="")
+                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-3.png", width="270", height="330" alt="")
                 .catalog__item-content
                   .catalog__item-title Райский сад
                   ul.list-disc
@@ -91,7 +91,7 @@ block content
                   p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
                   +modalButton(null, 'Рассчитать стоимость')
               .catalog__item.swiper-slide
-                img.catalog__item-img(src="images/catalog/catalog-2.png", width="270", height="330" alt="")
+                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-2.png", width="270", height="330" alt="")
                 .catalog__item-content
                   .catalog__item-title Райский сад
                   ul.list-disc
@@ -159,11 +159,11 @@ block content
           span Посмотрите, как мы помогаем создать уют&nbsp;
           |в помещениях с помощью озеленения
         #image-compare.compare__inner
-          img(src="images/compare/after.png", alt="")
-          img(src="images/compare/before.png", alt="")
+          img.lozad(data-src="images/compare/after.png", width="1170", height="600", alt="")
+          img.lozad(data-src="images/compare/before.png", width="1170", height="600", alt="")
 
     //About
-    section.about(style="background-image: url('images/about/bg.png');")
+    section.about.lozad(data-background-image='images/about/bg.png')
       .container
         h2.about__title
           |Почему наши растения сохраняют&nbsp;
@@ -194,7 +194,7 @@ block content
             p.about__item-descrip Он передает информацию фитодизайнерам, которые подбирают подходящие для Вас растения
             +modalButton(null, 'Подобрать живые растения', null)
           .about__item.about__item--small
-            img.about__item-img(src="images/about/girl.png", alt="")
+            img.about__item-img.lozad(data-src="images/about/girl.png", width="470", height="666", alt="")
             h3.about__item-title
               |Вы получите здоровые и жизнеспособные растения,&nbsp;
               span которые проходят систему контроля фитопатолога
@@ -214,7 +214,7 @@ block content
                   span Только после этого привозим Вам
 
     //Gains
-    section.gains(style="background-image: url('images/gains/bg.png');")
+    section.gains.lozad(data-background-image='images/gains/bg.png')
       .container
         .gains__inner
           .gains__descrip
@@ -224,7 +224,7 @@ block content
             h3.gains__subtitle Заказываем образцы, чтобы проверить качество каждого экземпляра согласно эталонам качества и журналу несоответствия
             +modalButton(null, 'Подобрать искуственные растения')
           .gains__img
-            img(src="images/gains/plants.png", width="1004", height="695", alt="")
+            img.lozad(data-src="images/gains/plants.png", width="1004", height="695", alt="")
             .gains__content
               .gains__item.gains__item--top-left
                 +plusIcon('gains__item-icon')
@@ -253,7 +253,7 @@ block content
                   |едкий химический запах
 
     //Сare
-    section.care(style="background-image: url('images/care/bg.png');")
+    section.care.lozad(data-background-image='images/care/bg.png')
       .container
         .care__content
           h2.care__title
@@ -290,7 +290,7 @@ block content
               |при заказе озеленения под ключ
 
     //Prevent
-    section.prevent(style="background-image: url('images/prevent/bg.png');")
+    section.prevent.lozad(data-background-image='images/prevent/bg.png')
       .container
         h2.prevent__title
           span Предотвращаем косяки,&nbsp;
@@ -299,13 +299,13 @@ block content
           #swiper-prevent.swiper-container
             .swiper-wrapper
               .prevent__slider-item.swiper-slide
-                img.prevent__slider-item-img(src="images/prevent/prevent-1.png", alt="")
+                img.prevent__slider-item-img.swiper-lazy(data-src="images/prevent/prevent-1.png", width="370", height="260", alt="")
                 p.prevent__slider-item-txt В жизни растение оказывается больше, чем в дизайне - мешает посетителям и сотрудникам
               .prevent__slider-item.swiper-slide
-                img.prevent__slider-item-img(src="images/prevent/prevent-2.png", alt="")
+                img.prevent__slider-item-img.swiper-lazy(data-src="images/prevent/prevent-2.png", width="370", height="260", alt="")
                 p.prevent__slider-item-txt На месте крепления панно или фитостены проходят важные коммуникации
               .prevent__slider-item.swiper-slide
-                img.prevent__slider-item-img(src="images/prevent/prevent-3.png", alt="")
+                img.prevent__slider-item-img.swiper-lazy(data-src="images/prevent/prevent-3.png", width="370", height="260", alt="")
                 p.prevent__slider-item-txt Потолок не выдерживает вес подвесного озеленения, которое нарисовал дизайнер
           .swiper-button-prev
           .swiper-button-next
@@ -320,7 +320,7 @@ block content
                 li Рассчитывает нагрузку несущих поверхностей
                 li Указывает в чертеже все коммуникации, чтобы знать где можно делать вертикальное
             .prevent__item-img
-              img(src="images/prevent/prevent-4.png", alt="")
+              img.lozad(data-src="images/prevent/prevent-4.png", width="570", height="330", alt="")
               +modalButton(null, 'Вызвать замерщика', null)
           .prevent__item
             .prevent__content
@@ -331,11 +331,11 @@ block content
                 li С помощью программы высчитывает нагрузку панно, фитостены и каждого кашпо
                 li Сопоставляет размеры растений и количеством места в вашем помещении
             .prevent__item-img
-              img(src="images/prevent/prevent-5.png", alt="")
+              img.lozad(data-src="images/prevent/prevent-5.png", width="570", height="330", alt="")
               +modalButton(null, 'Заказать проект', null)
 
     //Director
-    section.director(style="background-image: url('images/director/bg.png');")
+    section.director.lozad(data-background-image='images/director/bg.png')
       .container
         .director__group
           .director__content
@@ -353,16 +353,16 @@ block content
                 p.director__item-txt
                   span Используем только качественные комплектующие&nbsp;
                   |от проверенных производителей
-          img.director__content-img(src="images/director/grass.jpg", alt="")
+          img.director__content-img.lozad(data-src="images/director/grass.jpg", width="570", height="380", alt="")
         .director__group
           .director__about
-            img.director__img(src="images/director/director.png", alt="")
+            img.director__img.lozad(data-src="images/director/director.png", width="502", height="526", alt="")
             .director__info
               .director__descrip
                 .director__descrip-txt
                   p.director__descrip-name Наталья Иванова
                   p.director__descrip-post Основатель и руководитель студии озеленения Grinetto
-                img.director__descrip-signature(src="images/director/signature.png", alt="")
+                img.director__descrip-signature.lozad(data-src="images/director/signature.png", width="107", height="63", alt="")
               button.director__descrip-message
                 |Обращение руководителя
                 +icon('director__descrip-message-icon', 'play')
@@ -392,6 +392,69 @@ block content
                   span Если у Вас есть согласованная смета, то мы подготовим проект строго в ее рамках&nbsp;
                   |без малейшего увеличения стоимости
 
+    //Drafts
+    section.drafts
+      h2.drafts__title.container
+        |Свежие проекты&nbsp;
+        span Grinetto
+      .drafts__inner
+        .drafts__container.drafts__container--sm
+          .drafts__item.drafts__item--lg
+            img.drafts__item-img.lozad(data-src="images/drafts/draft-1.png", width="780", height="510", alt="")
+            .drafts__item-content
+              ul.drafts__item-list
+                li Натуральные
+                li Панно
+              +modalButton(null, 'Рассчитать стоимость')
+          .drafts__item.drafts__item--lg
+            img.drafts__item-img.lozad(data-src="images/drafts/draft-2.png", width="780", height="510", alt="")
+            .drafts__item-content
+              ul.drafts__item-list
+                li Натуральные
+                li Панно
+              +modalButton(null, 'Рассчитать стоимость')
+        .drafts__container.drafts__container--lg
+          .drafts__container-inner
+            .drafts__item.drafts__item--xl
+              img.drafts__item-img.lozad(data-src="images/drafts/draft-3.png", width="680", height="600" alt="")
+              .drafts__item-content
+                ul.drafts__item-list
+                  li Натуральные
+                  li Панно
+                +modalButton(null, 'Рассчитать стоимость')
+            .drafts__item.drafts__item--md
+              img.drafts__item-img.lozad(data-src="images/drafts/draft-4.png", width="460", height="600",  alt="")
+              .drafts__item-content
+                ul.drafts__item-list
+                  li Натуральные
+                  li Панно
+                +modalButton(null, 'Рассчитать стоимость')
+          .drafts__container-inner
+            .drafts__item.drafts__item--sm
+              img.drafts__item-img.lozad(data-src="images/drafts/draft-5.png", width="380", height="420", alt="")
+              .drafts__item-content
+                ul.drafts__item-list
+                  li Натуральные
+                  li Панно
+                +modalButton(null, 'Рассчитать стоимость')
+            .drafts__item.drafts__item--sm
+              img.drafts__item-img.lozad(data-src="images/drafts/draft-6.png", width="380", height="420", alt="")
+              .drafts__item-content
+                ul.drafts__item-list
+                  li Натуральные
+                  li Панно
+                +modalButton(null, 'Рассчитать стоимость')
+            .drafts__item.drafts__item--sm
+              img.drafts__item-img.lozad(data-src="images/drafts/draft-7.png", width="380", height="420", alt="")
+              .drafts__item-content
+                ul.drafts__item-list
+                  li Натуральные
+                  li Панно
+                +modalButton(null, 'Рассчитать стоимость')
+      button.drafts__more.container
+        +icon('drafts__more-icon', 'refresh')
+        |Показать ещё
+
     //Social
     section.social
       .container
@@ -405,14 +468,30 @@ block content
             ul.social__list
               li.social__item
                 a(href="#" aria-label="facebook" target="_blank" rel="noopener")
-                  img(src="images/icons/facebook.png", alt="")
+                  img.lozad(data-src="images/icons/facebook.png", width="185", height="60", alt="")
               li.social__item
                 a(href="#" aria-label="vkontakte" target="_blank" rel="noopener")
-                  img(src="images/icons/vk.png", alt="")
+                  img.lozad(data-src="images/icons/vk.png", width="185", height="60", alt="")
               li.social__item
                 a(href="#" aria-label="instagram" target="_blank" rel="noopener")
-                  img(src="images/icons/insta.png", alt="")
+                  img.lozad(data-src="images/icons/insta.png", width="185", height="60", alt="")
               li.social__item
                 a(href="#" aria-label="youtube" target="_blank" rel="noopener")
-                  img(src="images/icons/yt.png", alt="")
-          img.social__img(src="images/social/phone.png", alt="")
+                  img.lozad(data-src="images/icons/yt.png", width="185", height="60", alt="")
+          img.social__img.lozad(data-src="images/social/phone.png", width="402", height="457", alt="")
+
+    //Reviews
+    section.reviews.lozad(data-background-image='images/reviews/bg.png')
+      .container
+        h2.reviews__title Отзывы заказчиков
+        ul#filter-tabs.reviews__filters(data-tabs)
+          li.reviews__filters-item
+            a.reviews__filters-button(href="#videos" data-tabby-default) Видео
+          li.reviews__filters-item
+            a.reviews__filters-button(href="#gratitudes") Благодарности
+          li.reviews__filters-item
+            a.reviews__filters-button(href="#socials") В социальных сетях
+        .reviews__inner
+          #videos.reviews__videos
+          #gratitudes.reviews__images
+          #socials.reviews__images

@@ -3,6 +3,12 @@ const swiperCatalog = new Swiper('#swiper-catalog', {
 
   loop: true,
 
+  preloadImages: false,
+  lazy: {
+    loadPrevNext: true
+  },
+  watchSlidesVisibility: true,
+
   spaceBetween: 30,
 
   autoplay: {
