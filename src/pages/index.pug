@@ -486,9 +486,9 @@ block content
         h2.reviews__title Отзывы заказчиков
         ul#filter-tabs.reviews__filters(data-tabs)
           li.reviews__filters-item
-            a.reviews__filters-button(href="#videos" ) Видео
+            a.reviews__filters-button(href="#videos" data-tabby-default) Видео
           li.reviews__filters-item
-            a.reviews__filters-button(href="#gratitudes" data-tabby-default) Благодарности
+            a.reviews__filters-button(href="#gratitudes") Благодарности
           li.reviews__filters-item
             a.reviews__filters-button(href="#socials") В социальных сетях
         ul#videos.reviews__tab.reviews__videos
@@ -497,21 +497,21 @@ block content
           +reviewsVideo('video-1.png')
           +reviewsVideo('video-1.png')
         ul#gratitudes.reviews__tab.reviews__images
-          +reviewsImage('gratitude/gratitude-1.png')
-          +reviewsImage('gratitude/gratitude-1.png')
-          +reviewsImage('gratitude/gratitude-1.png')
-          +reviewsImage('gratitude/gratitude-1.png')
-          +reviewsImage('gratitude/gratitude-1.png')
-          +reviewsImage('gratitude/gratitude-1.png')
-          +reviewsImage('gratitude/gratitude-1.png')
-          +reviewsImage('gratitude/gratitude-1.png')
+          +reviewsImage('gratitude/gratitude-1.png', '01')
+          +reviewsImage('gratitude/gratitude-1.png', '01')
+          +reviewsImage('gratitude/gratitude-1.png', '01')
+          +reviewsImage('gratitude/gratitude-1.png', '01')
+          +reviewsImage('gratitude/gratitude-1.png', '01')
+          +reviewsImage('gratitude/gratitude-1.png', '01')
+          +reviewsImage('gratitude/gratitude-1.png', '01')
+          +reviewsImage('gratitude/gratitude-1.png', '01')
         ul#socials.reviews__tab.reviews__images
-          +reviewsImage('social/social-1.png')
-          +reviewsImage('social/social-1.png')
-          +reviewsImage('social/social-1.png')
-          +reviewsImage('social/social-1.png')
-          +reviewsImage('social/social-1.png')
-          +reviewsImage('social/social-1.png')
-          +reviewsImage('social/social-1.png')
-          +reviewsImage('social/social-1.png')
+          +reviewsImage('social/social-1.png', '02')
+          +reviewsImage('social/social-1.png', '02')
+          +reviewsImage('social/social-1.png', '02')
+          +reviewsImage('social/social-1.png', '02')
+          +reviewsImage('social/social-1.png', '02')
+          +reviewsImage('social/social-1.png', '02')
+          +reviewsImage('social/social-1.png', '02')
+          +reviewsImage('social/social-1.png', '02')
 

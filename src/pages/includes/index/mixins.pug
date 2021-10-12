@@ -30,8 +30,8 @@ mixin reviewsVideo(img)
               img.lozad(data-src="images/icons/insta-sm.png", width="40", height="40", alt="")
       p.reviews__video-info-bot Руководитель ресторана Vеранда
 
-mixin reviewsImage(img)
+mixin reviewsImage(img, dataNum)
   li.reviews__images-item
-    img.lozad(data-src=`images/reviews/${img}`, data-fancybox="gallery", width="270", height="360", alt="")
+    img.lozad(data-src=`images/reviews/${img}`, data-fancybox=`gallery${dataNum}`, width="270", height="360", alt="")
     .reviews__images-item-content
       +icon('reviews__images-item-icon', 'zoom')
