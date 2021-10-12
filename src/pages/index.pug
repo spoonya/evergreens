@@ -31,26 +31,26 @@ block content
                 |Опытные фитодизайнеры подбирают растения, которые&nbsp;
                 span хорошо приживаются и сохраняют первозданную красоту более 5 лет
               .intro__features-item-img
-                img.lozad(data-src="images/intro/service-1.png", width="270", height="258", alt="")
+                img.lozad(data-src="images/intro/service-1.png", width="270", height="265", alt="")
             li.intro__features-item
               h3.intro__features-item-title
                 |Изготавливаем искусственные&nbsp;
                 span растения по индивидуальным размерам в любом количестве&nbsp;
                 |на собственном производстве
               .intro__features-item-img
-                img.lozad(data-src="images/intro/service-2.png", width="270", height="258", alt="")
+                img.lozad(data-src="images/intro/service-2.png", width="270", height="265", alt="")
             li.intro__features-item
               h3.intro__features-item-title
                 span Профессиональный уход за всеми видами растений&nbsp;
                 |от наших биологов и фитопотологов
               .intro__features-item-img
-                img.lozad(data-src="images/intro/service-3.png", width="270", height="258", alt="")
+                img.lozad(data-src="images/intro/service-3.png", width="270", height="265", alt="")
             li.intro__features-item
               h3.intro__features-item-title
                 span Фиксированные сроки и стоимость&nbsp;
                 |без раздувания сметы и скрытых платежей по договору
               .intro__features-item-img
-                img.lozad(data-src="images/intro/service-4.png", width="270", height="258", alt="")
+                img.lozad(data-src="images/intro/service-4.png", width="270", height="265", alt="")
 
     //Catalog
     section.catalog.lozad(data-background-image='images/catalog/bg.png')
@@ -153,7 +153,7 @@ block content
                   button с политикой конфиденциальности сайта
 
     //Compare
-    section.compare(style="background-image: url('images/compare/bg.png');")
+    section.compare.lozad(data-background-image='images/compare/bg.png')
       .container
         h2.compare__title
           span Посмотрите, как мы помогаем создать уют&nbsp;
@@ -486,12 +486,32 @@ block content
         h2.reviews__title Отзывы заказчиков
         ul#filter-tabs.reviews__filters(data-tabs)
           li.reviews__filters-item
-            a.reviews__filters-button(href="#videos" data-tabby-default) Видео
+            a.reviews__filters-button(href="#videos" ) Видео
           li.reviews__filters-item
-            a.reviews__filters-button(href="#gratitudes") Благодарности
+            a.reviews__filters-button(href="#gratitudes" data-tabby-default) Благодарности
           li.reviews__filters-item
             a.reviews__filters-button(href="#socials") В социальных сетях
-        .reviews__inner
-          #videos.reviews__videos
-          #gratitudes.reviews__images
-          #socials.reviews__images
+        ul#videos.reviews__tab.reviews__videos
+          +reviewsVideo('video-1.png')
+          +reviewsVideo('video-1.png')
+          +reviewsVideo('video-1.png')
+          +reviewsVideo('video-1.png')
+        ul#gratitudes.reviews__tab.reviews__images
+          +reviewsImage('gratitude/gratitude-1.png')
+          +reviewsImage('gratitude/gratitude-1.png')
+          +reviewsImage('gratitude/gratitude-1.png')
+          +reviewsImage('gratitude/gratitude-1.png')
+          +reviewsImage('gratitude/gratitude-1.png')
+          +reviewsImage('gratitude/gratitude-1.png')
+          +reviewsImage('gratitude/gratitude-1.png')
+          +reviewsImage('gratitude/gratitude-1.png')
+        ul#socials.reviews__tab.reviews__images
+          +reviewsImage('social/social-1.png')
+          +reviewsImage('social/social-1.png')
+          +reviewsImage('social/social-1.png')
+          +reviewsImage('social/social-1.png')
+          +reviewsImage('social/social-1.png')
+          +reviewsImage('social/social-1.png')
+          +reviewsImage('social/social-1.png')
+          +reviewsImage('social/social-1.png')
+

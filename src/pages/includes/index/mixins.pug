@@ -8,3 +8,30 @@ mixin plusIcon(className)
         stop(stop-color='#FAD553')
         stop(offset='1' stop-color='#FFC700')
 
+
+mixin reviewsVideo(img)
+  li.reviews__video
+    .reviews__video-content.lozad(data-background-image=`images/reviews/video/${img}`)
+      button.reviews__video-button
+        +icon('reviews__video-button-icon', 'play-circle')
+        |Смотреть видео-отзыв
+    .reviews__video-info
+      .reviews__video-info-top
+        p.reviews__video-info-name Иван Иванов
+        ul.reviews__video-info-social
+          li
+            a(href="#" target="_blank" rel="noopener" aria-label="facebook")
+              img.lozad(data-src="images/icons/facebook-sm.png", width="40", height="40", alt="")
+          li
+            a(href="#" target="_blank" rel="noopener" aria-label="vkontakte")
+              img.lozad(data-src="images/icons/vk-sm.png", width="40", height="40", alt="")
+          li
+            a(href="#" target="_blank" rel="noopener" aria-label="instagram")
+              img.lozad(data-src="images/icons/insta-sm.png", width="40", height="40", alt="")
+      p.reviews__video-info-bot Руководитель ресторана Vеранда
+
+mixin reviewsImage(img)
+  li.reviews__images-item
+    img.lozad(data-src=`images/reviews/${img}`, data-fancybox="gallery", width="270", height="360", alt="")
+    .reviews__images-item-content
+      +icon('reviews__images-item-icon', 'zoom')
