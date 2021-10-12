@@ -52,6 +52,65 @@ block content
               .intro__features-item-img
                 img.lozad(data-src="images/intro/service-4.png", width="270", height="265", alt="")
 
+    //Drafts
+    section.drafts.drafts--filters
+      h2.drafts__title.container
+        span Используем современные тренды и технологии&nbsp;
+        |для создания неповторимых интерьеров
+      ul#filter-drafts.drafts__filters.container
+        li.drafts__filters-item
+          button.drafts__filters-button
+            |Натуральные растения
+            +icon('drafts__filters-button-icon', 'close')
+        li.drafts__filters-item
+          button.drafts__filters-button
+            |Искусственные растения
+            +icon('drafts__filters-button-icon', 'close')
+        li.drafts__filters-item
+          button.drafts__filters-button
+            |Стабилизированные растения
+            +icon('drafts__filters-button-icon', 'close')
+        li.drafts__filters-item
+          button.drafts__filters-button
+            |Вертикальное озеленение
+            +icon('drafts__filters-button-icon', 'close')
+        li.drafts__filters-item
+          button.drafts__filters-button
+            |Фитостена
+            +icon('drafts__filters-button-icon', 'close')
+        li.drafts__filters-item
+          button.drafts__filters-button
+            |Кашпо
+            +icon('drafts__filters-button-icon', 'close')
+        li.drafts__filters-item
+          button.drafts__filters-button
+            |Панно
+            +icon('drafts__filters-button-icon', 'close')
+        li.drafts__filters-item
+          button.drafts__filters-button
+            |Стабилизированный мох
+            +icon('drafts__filters-button-icon', 'close')
+        li.drafts__filters-item
+          button.drafts__filters-button
+            |Пальмы
+            +icon('drafts__filters-button-icon', 'close')
+        li.drafts__filters-item
+          button.drafts__filters-button
+            |Вертикальный сад
+            +icon('drafts__filters-button-icon', 'close')
+      +draftsImages(
+        [
+          'draft-8.png',
+          'draft-9.png',
+          'draft-10.png',
+          'draft-11.png',
+          'draft-12.png',
+          'draft-13.png',
+          'draft-14.png',
+        ],
+        ['Искуственные растения', 'Пальмы']
+      )
+
     //Catalog
     section.catalog.lozad(data-background-image='images/catalog/bg.png')
       .container
@@ -61,44 +120,10 @@ block content
         .catalog__slider
           #swiper-catalog.swiper-container
             .swiper-wrapper
-              .catalog__item.swiper-slide
-                span.catalog__item-mark с автополивом
-                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-1.png", width="270", height="330" alt="")
-                .catalog__item-content
-                  span.catalog__item-sale -20%
-                  .catalog__item-title Райский сад
-                  ul.list-disc
-                    li: span Живые гортензии
-                    li: span Стабилизиорванные лиственницы
-                  p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
-                  +modalButton(null, 'Рассчитать стоимость')
-              .catalog__item.swiper-slide
-                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-2.png", width="270", height="330" alt="")
-                .catalog__item-content
-                  .catalog__item-title Райский сад
-                  ul.list-disc
-                    li: span Живые гортензии
-                    li: span Стабилизиорванные лиственницы
-                  p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
-                  +modalButton(null, 'Рассчитать стоимость')
-              .catalog__item.swiper-slide
-                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-3.png", width="270", height="330" alt="")
-                .catalog__item-content
-                  .catalog__item-title Райский сад
-                  ul.list-disc
-                    li: span Живые гортензии
-                    li: span Стабилизиорванные лиственницы
-                  p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
-                  +modalButton(null, 'Рассчитать стоимость')
-              .catalog__item.swiper-slide
-                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-2.png", width="270", height="330" alt="")
-                .catalog__item-content
-                  .catalog__item-title Райский сад
-                  ul.list-disc
-                    li: span Живые гортензии
-                    li: span Стабилизиорванные лиственницы
-                  p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
-                  +modalButton(null, 'Рассчитать стоимость')
+              +catalogSliderItem
+              +catalogSliderItem
+              +catalogSliderItem
+              +catalogSliderItem
             .swiper-button-prev
             .swiper-button-next
         .catalog__inner
@@ -397,60 +422,18 @@ block content
       h2.drafts__title.container
         |Свежие проекты&nbsp;
         span Grinetto
-      .drafts__inner
-        .drafts__container.drafts__container--sm
-          .drafts__item.drafts__item--lg
-            img.drafts__item-img.lozad(data-src="images/drafts/draft-1.png", width="780", height="510", alt="")
-            .drafts__item-content
-              ul.drafts__item-list
-                li Натуральные
-                li Панно
-              +modalButton(null, 'Рассчитать стоимость')
-          .drafts__item.drafts__item--lg
-            img.drafts__item-img.lozad(data-src="images/drafts/draft-2.png", width="780", height="510", alt="")
-            .drafts__item-content
-              ul.drafts__item-list
-                li Натуральные
-                li Панно
-              +modalButton(null, 'Рассчитать стоимость')
-        .drafts__container.drafts__container--lg
-          .drafts__container-inner
-            .drafts__item.drafts__item--xl
-              img.drafts__item-img.lozad(data-src="images/drafts/draft-3.png", width="680", height="600" alt="")
-              .drafts__item-content
-                ul.drafts__item-list
-                  li Натуральные
-                  li Панно
-                +modalButton(null, 'Рассчитать стоимость')
-            .drafts__item.drafts__item--md
-              img.drafts__item-img.lozad(data-src="images/drafts/draft-4.png", width="460", height="600",  alt="")
-              .drafts__item-content
-                ul.drafts__item-list
-                  li Натуральные
-                  li Панно
-                +modalButton(null, 'Рассчитать стоимость')
-          .drafts__container-inner
-            .drafts__item.drafts__item--sm
-              img.drafts__item-img.lozad(data-src="images/drafts/draft-5.png", width="380", height="420", alt="")
-              .drafts__item-content
-                ul.drafts__item-list
-                  li Натуральные
-                  li Панно
-                +modalButton(null, 'Рассчитать стоимость')
-            .drafts__item.drafts__item--sm
-              img.drafts__item-img.lozad(data-src="images/drafts/draft-6.png", width="380", height="420", alt="")
-              .drafts__item-content
-                ul.drafts__item-list
-                  li Натуральные
-                  li Панно
-                +modalButton(null, 'Рассчитать стоимость')
-            .drafts__item.drafts__item--sm
-              img.drafts__item-img.lozad(data-src="images/drafts/draft-7.png", width="380", height="420", alt="")
-              .drafts__item-content
-                ul.drafts__item-list
-                  li Натуральные
-                  li Панно
-                +modalButton(null, 'Рассчитать стоимость')
+      +draftsImages(
+        [
+          'draft-1.png',
+          'draft-2.png',
+          'draft-3.png',
+          'draft-4.png',
+          'draft-5.png',
+          'draft-6.png',
+          'draft-7.png',
+        ],
+        ['Натуральные', 'Панно']
+      )
       button.drafts__more.container
         +icon('drafts__more-icon', 'refresh')
         |Показать ещё

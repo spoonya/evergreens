@@ -7,9 +7,12 @@ import viewer from './compare';
 import { validateFormCatalog } from './forms';
 import controlTabs from './tabs';
 import lazyLoadObserver from './lazyload';
+import controlFilterButtons from './fiter-drafts';
 
 validateFormCatalog();
 
 controlTabs();
+
+controlFilterButtons();
 
 lazyLoadObserver.observe();
