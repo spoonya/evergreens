@@ -103,10 +103,13 @@
 .intro__features-list {
   position: relative;
 
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  grid-gap: 3rem;
 
-  bottom: 16rem;
+  bottom: 15rem;
 }
 
 .intro__features-item {
@@ -119,8 +122,6 @@
   justify-content: flex-end;
 
   background-color: $color-primary-white;
-
-  width: 23.1%;
 
   margin-bottom: 2rem;
 

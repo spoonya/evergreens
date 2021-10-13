@@ -52,6 +52,176 @@ block content
               .intro__features-item-img
                 img.lozad(data-src="images/intro/service-4.png", width="270", height="265", alt="")
 
+    //Quiz
+    section.quiz.lozad(data-background-image='images/quiz/bg.png')
+      .container
+        .quiz__inner
+          .quiz__titles
+            h2.quiz__title
+              span Рассчитайте стоимость&nbsp;
+              |и сроки озеленения
+            h3.quiz__subtitle и получите индивидуальную подборку дизайнов  для вашего объекта под ваши пожелания
+          .quiz__container
+            .quiz__block
+              .quiz__counter
+                |Вопрос&nbsp;
+                span#swiper-quiz-current 1
+                |&nbsp;из&nbsp;
+                span#swiper-quiz-total 5
+              .quiz__progress
+              form.form.quiz__content(action="#")
+                #swiper-quiz.swiper-container
+                  .swiper-wrapper
+                    .quiz__item.swiper-slide
+                      h3.quiz__slide-title Какие помещения нужно озеленить?
+                      ul.quiz__images
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="office" name="quiz-space" type="radio" checked)
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-1.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Офисные помещения
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="caffe" name="quiz-space" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-2.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Кафе, ресторан, бар
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="business" name="quiz-space" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-3.png", width="160", height="120", alt="")
+                            p.quiz__item-txt ТРЦ, бизнес-центр
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="private" name="quiz-space" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-4.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Частный дом, участок
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="hotel" name="quiz-space" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-5.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Гостиница
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="other" name="quiz-space" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-6.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Другое
+                    .quiz__item.swiper-slide
+                      h3.quiz__slide-title Укажите суммарную площадь помещений
+                      ul.quiz__inputs
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="50" name="quiz-square" type="radio" checked)
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt до 50 м2
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="50-100" name="quiz-square" type="radio")
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt 50-100 м2
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="100-200" name="quiz-square" type="radio")
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt 100-200 м2
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="200-500" name="quiz-square" type="radio")
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt 200-500 м2
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="500" name="quiz-square" type="radio")
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt свыше 500 м2
+                    .quiz__item.swiper-slide
+                      h3.quiz__slide-title Есть ли у вас дизайн-проект?
+                      ul.quiz__inputs
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="desing-yes" name="quiz-design" type="radio" checked)
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Да
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="design-no" name="quiz-design" type="radio")
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt Нет
+                        li.form__upload
+                          label.form__upload-button
+                            +icon('form__upload-button-icon', 'upload')
+                            input#quiz-upload(type="file" name="дизайн-проект" multiple hidden)
+                            span.form__upload-button-txt Отправить проект
+                          #quiz-files-chosen.form__upload-files
+                    .quiz__item.swiper-slide
+                      h3.quiz__slide-title Какие растения вы предпочитаете?
+                      ul.quiz__images
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="live" name="quiz-plants" type="radio" checked)
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-7.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Живые
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="synthetic" name="quiz-plants" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-8.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Икусственные
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="stabilized" name="quiz-plants" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-9.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Стабилизированные
+                    .quiz__item.swiper-slide
+                      h3.quiz__slide-title Укажите дополнительные предпочтения в озеленении
+                      ul.quiz__images
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="panel" name="quiz-extra" type="radio" checked)
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-10.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Панно из мха
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="vertical-green" name="quiz-extra" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-11.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Вертикальное озеленение
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="vertical-garden" name="quiz-extra" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-12.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Вертикальный сад
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="phytowall" name="quiz-extra" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-13.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Фитостена
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="rare" name="quiz-extra" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-14.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Редкие растения
+                        li.form__control
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="palm" name="quiz-extra" type="radio")
+                            .quiz__img-wrapper
+                              img(src="images/quiz/quiz-15.png", width="160", height="120", alt="")
+                            p.quiz__item-txt Пальмы
+              .quiz__controls
+                button#swiper-button-prev.quiz__button-prev Вернуться назад
+                +button('swiper-button-next', 'Далее', 'arrow-right')
+
     //Drafts
     section.drafts.drafts--filters
       h2.drafts__title.container
@@ -497,4 +667,3 @@ block content
           +reviewsImage('social/social-1.png', '02')
           +reviewsImage('social/social-1.png', '02')
           +reviewsImage('social/social-1.png', '02')
-

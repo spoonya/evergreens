@@ -12,14 +12,14 @@ mixin draftsImages(imgArr, markArr)
   .drafts__inner
     .drafts__container.drafts__container--sm
       .drafts__item.drafts__item--lg
-        img.drafts__item-img.lozad(data-src=`images/drafts/${imgArr[0]}`, width="780", height="510", alt="")
+        img.drafts__item-img(src=`images/drafts/${imgArr[0]}`, width="780", height="510", alt="")
         .drafts__item-content
           ul.drafts__item-list
             li= markArr[0]
             li= markArr[1]
           +modalButton(null, 'Рассчитать стоимость')
       .drafts__item.drafts__item--lg
-        img.drafts__item-img.lozad(data-src=`images/drafts/${imgArr[1]}`, width="780", height="510", alt="")
+        img.drafts__item-img(src=`images/drafts/${imgArr[1]}`, width="780", height="510", alt="")
         .drafts__item-content
           ul.drafts__item-list
             li= markArr[0]
@@ -28,14 +28,14 @@ mixin draftsImages(imgArr, markArr)
     .drafts__container.drafts__container--lg
       .drafts__container-inner
         .drafts__item.drafts__item--xl
-          img.drafts__item-img.lozad(data-src=`images/drafts/${imgArr[2]}`, width="680", height="600" alt="")
+          img.drafts__item-img(src=`images/drafts/${imgArr[2]}`, width="680", height="600" alt="")
           .drafts__item-content
             ul.drafts__item-list
               li= markArr[0]
               li= markArr[1]
             +modalButton(null, 'Рассчитать стоимость')
         .drafts__item.drafts__item--md
-          img.drafts__item-img.lozad(data-src=`images/drafts/${imgArr[3]}`, width="460", height="600",  alt="")
+          img.drafts__item-img(src=`images/drafts/${imgArr[3]}`, width="460", height="600",  alt="")
           .drafts__item-content
             ul.drafts__item-list
               li= markArr[0]
@@ -43,21 +43,21 @@ mixin draftsImages(imgArr, markArr)
             +modalButton(null, 'Рассчитать стоимость')
       .drafts__container-inner
         .drafts__item.drafts__item--sm
-          img.drafts__item-img.lozad(data-src=`images/drafts/${imgArr[4]}`, width="380", height="420", alt="")
+          img.drafts__item-img(src=`images/drafts/${imgArr[4]}`, width="380", height="420", alt="")
           .drafts__item-content
             ul.drafts__item-list
               li= markArr[0]
               li= markArr[1]
             +modalButton(null, 'Рассчитать стоимость')
         .drafts__item.drafts__item--sm
-          img.drafts__item-img.lozad(data-src=`images/drafts/${imgArr[5]}`, width="380", height="420", alt="")
+          img.drafts__item-img(src=`images/drafts/${imgArr[5]}`, width="380", height="420", alt="")
           .drafts__item-content
             ul.drafts__item-list
               li= markArr[0]
               li= markArr[1]
             +modalButton(null, 'Рассчитать стоимость')
         .drafts__item.drafts__item--sm
-          img.drafts__item-img.lozad(data-src=`images/drafts/${imgArr[6]}`, width="380", height="420", alt="")
+          img.drafts__item-img(src=`images/drafts/${imgArr[6]}`, width="380", height="420", alt="")
           .drafts__item-content
             ul.drafts__item-list
               li= markArr[0]

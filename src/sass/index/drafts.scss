@@ -4,6 +4,7 @@
   align-items: center;
 
   margin-bottom: 5rem;
+  padding-top: 8rem;
 
   &--filters {
     margin-bottom: 8.4rem;
@@ -67,6 +68,8 @@
       height: 12px;
 
       vertical-align: middle;
+
+      pointer-events: none;
     }
   }
 }

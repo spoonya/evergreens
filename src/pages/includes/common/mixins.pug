@@ -15,9 +15,14 @@ mixin phone(obj)
       p.phone__worktime Ежедневно с 9.00 до 20.00
 
 mixin modalButton(target, txt, icon= null)
-  button.button(data-modal-target= target)= txt
+  button.button(data-modal-target= target type="button")= txt
     if icon
       +icon('button__icon', icon)
 
 mixin submitButton(txt)
   button.button.button--submit= txt
+
+mixin button(id, txt, icon)
+  button.button(id= id type="button")= txt
+    if icon
+      +icon('button__icon', icon)

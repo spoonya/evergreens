@@ -8,11 +8,14 @@ import { validateFormCatalog } from './forms';
 import controlTabs from './tabs';
 import lazyLoadObserver from './lazyload';
 import controlFilterButtons from './fiter-drafts';
+import { controlUpload } from './sliders/quiz';
 
 validateFormCatalog();
 
 controlTabs();
 
 controlFilterButtons();
+
+controlUpload();
 
 lazyLoadObserver.observe();
