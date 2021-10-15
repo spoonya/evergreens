@@ -7,6 +7,12 @@ const swiperQuiz = new Swiper('#swiper-quiz', {
 
   spaceBetween: 20,
 
+  preloadImages: false,
+  lazy: {
+    loadPrevNext: true
+  },
+  watchSlidesVisibility: true,
+
   resizeObserver: true,
   observer: true,
   observeParents: true,

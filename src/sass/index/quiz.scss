@@ -41,6 +41,7 @@
 
   max-width: 67rem;
   width: 100%;
+  min-height: 64rem;
 
   background-color: $color-primary-white;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.07);
@@ -94,6 +95,8 @@
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   grid-gap: 2.5rem;
+
+  min-height: 32.9rem;
 
   .form__checkbox-wrapper {
     flex-direction: column;

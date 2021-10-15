@@ -48,6 +48,18 @@
   border-radius: 10px;
 
   font-size: 1.4rem;
+
+  select:required:invalid {
+    color: $color-primary-gray;
+  }
+
+  option {
+    color: $color-primary-black;
+  }
+
+  option[value=''][disabled] {
+    display: none;
+  }
 }
 
 .form__control.error {

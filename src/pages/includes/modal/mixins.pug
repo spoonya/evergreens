@@ -217,7 +217,7 @@ mixin modalCostCommercial
           p.modal__txt.modal__txt--md Какой у Вас объект?
           .form__control.form__select
             span.form__error
-            select.form__input(name="form-callback-square" data-form-select)
+            select.form__input(name="form-callback-square" required data-form-select)
               option(value="" disabled selected) Выберите площадь
               option(value="50") до 50 м2
               option(value="50-100") 50-100 м2
@@ -227,7 +227,7 @@ mixin modalCostCommercial
           p.modal__txt.modal__txt--md Его суммарная площадь
           .form__control.form__select
             span.form__error
-            select.form__input(name="form-callback-square" data-form-select)
+            select.form__input(name="form-callback-square" required data-form-select)
               option(value="" disabled selected) Выберите площадь
               option(value="50") до 50 м2
               option(value="50-100") 50-100 м2
@@ -288,7 +288,7 @@ mixin modalCostProduct
           p.modal__txt.modal__txt--md Сколько растений вам нужно?
           .form__control.form__select
             span.form__error
-            select.form__input(name="form-callback-count" data-form-select)
+            select.form__input(name="form-callback-count" required data-form-select)
               option(value="" disabled selected) Выберите количество
               option(value="1") 1
               option(value="2") 2
