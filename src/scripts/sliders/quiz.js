@@ -34,6 +34,8 @@ function controlUpload() {
   const uploadBtn = document.querySelector('#quiz-upload');
   const filesChosenEl = document.querySelector('#quiz-files-chosen');
 
+  if (!uploadBtn) return;
+
   const appendChosenFiles = (name) => {
     const fileTemplate = `<p>${name}
                             <svg>

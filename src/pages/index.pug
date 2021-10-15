@@ -22,7 +22,7 @@ block content
                     |Скачайте&nbsp;
                     span каталог  30 популярных примеров озеленения&nbsp;
                     |в 2021 году
-                  +modalButton(null, 'Получить каталог примеров', 'hand')
+                  +modalButton('modal-catalog', 'Получить каталог примеров', 'hand')
       .intro__features
         .container
           ul.intro__features-list
@@ -387,7 +387,7 @@ block content
                   span Определяет&nbsp;
                   |источники отопления и его интенсивность
             p.about__item-descrip Он передает информацию фитодизайнерам, которые подбирают подходящие для Вас растения
-            +modalButton(null, 'Подобрать живые растения', null)
+            +modalButton('modal-biologist', 'Подобрать живые растения', null)
           .about__item.about__item--small
             img.about__item-img.lozad(data-src="images/about/girl.png", width="470", height="666", alt="")
             h3.about__item-title
@@ -417,7 +417,7 @@ block content
               |Искусственные растения также тщательно проверяются,&nbsp;
               span чтобы Вы получили лучшие экземпляры
             h3.gains__subtitle Заказываем образцы, чтобы проверить качество каждого экземпляра согласно эталонам качества и журналу несоответствия
-            +modalButton(null, 'Подобрать искуственные растения')
+            +modalButton('modal-questions', 'Подобрать искуственные растения')
           .gains__img
             img.lozad(data-src="images/gains/plants.png", width="1004", height="695", alt="")
             .gains__content
@@ -479,7 +479,7 @@ block content
                 span Очистка листвы от&nbsp;
                 |пыли и нанесение на них специальных средств для блеска
           .care__group
-            +modalButton(null, 'Рассчитать стоимость ухода', null)
+            +modalButton('modal-cost-care', 'Рассчитать стоимость ухода', null)
             .care__present
               span Месяц в подарок
               |при заказе озеленения под ключ
@@ -516,7 +516,7 @@ block content
                 li Указывает в чертеже все коммуникации, чтобы знать где можно делать вертикальное
             .prevent__item-img
               img.lozad(data-src="images/prevent/prevent-4.png", width="570", height="330", alt="")
-              +modalButton(null, 'Вызвать замерщика', null)
+              +modalButton('modal-questions', 'Вызвать замерщика', null)
           .prevent__item
             .prevent__content
               h3.prevent__item-title
@@ -527,7 +527,7 @@ block content
                 li Сопоставляет размеры растений и количеством места в вашем помещении
             .prevent__item-img
               img.lozad(data-src="images/prevent/prevent-5.png", width="570", height="330", alt="")
-              +modalButton(null, 'Заказать проект', null)
+              +modalButton('modal-cost-commercial', 'Заказать проект', null)
 
     //Director
     section.director.lozad(data-background-image='images/director/bg.png')

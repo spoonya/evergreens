@@ -1,9 +1,11 @@
-import { DOM, CLASSES } from '../constants';
+import { CLASSES } from '../constants';
 
 class FormValidation {
-  constructor(selector, { isModal } = { isModal: false }) {
+  constructor(selector, isCatalog = false) {
     this.form = document.querySelector(selector);
     if (!this.form) return;
+
+    this.isCatalog = isCatalog;
 
     this.classes = {
       error: 'error',
@@ -12,29 +14,13 @@ class FormValidation {
       success: 'success'
     };
 
-    this.alertSucces = {
-      html: `<div class="alert" id="#form-alert">
-              <div class="alert__inner">
-                <h2 class="alert__title">Спасибо! Ваш запрос отправлен.</h2>
-                <h3 class="alert__subtitle"><span>А пока подпишитесь на наш Instagram,&nbsp;</span>там много интересного</h3><a class="alert__link" href="https://www.instagram.com/gusarev_house/" target="_blank" rel="noopener">@gusarev_house</a>
-              </div>
-              <img class="alert__img" src="images/modals/phone-2.png" width="240" height="228" alt="" />
-            </div>`
-    };
-
-    this.alertFailure = {
-      html: `<div class="alert" id="#form-alert">
-              <div class="alert__inner">
-                <h2 class="alert__title">Произошла ошибка.</h2>
-            </div>`
-    };
-
     this.formElements = {
       username: this.form.querySelector('[data-form-name]'),
       userPhone: this.form.querySelector('[data-form-phone]'),
       userEmail: this.form.querySelector('[data-form-email]'),
       userMsg: this.form.querySelector('[data-form-message]'),
-      userAgreement: this.form.querySelector('[data-form-agreement]')
+      userAgreement: this.form.querySelector('[data-form-agreement]'),
+      userSelects: [...this.form.querySelectorAll('[data-form-select]')]
     };
 
     this.defaultConfig = {
@@ -64,6 +50,12 @@ class FormValidation {
           unchecked: 'Поле должно быть отмечено'
         }
       },
+      userSelect: {
+        isRequired: true,
+        errors: {
+          unselected: 'Выберите значение'
+        }
+      },
       userMsg: {
         isRequired: true,
         maxLength: 250,
@@ -79,8 +71,6 @@ class FormValidation {
         }
       }
     };
-
-    this.isModal = isModal;
   }
 
   _validateEmail(email) {
@@ -196,6 +186,21 @@ class FormValidation {
     return true;
   }
 
+  _checkUserSelects(selects, config) {
+    let isValid = true;
+
+    selects.forEach((select) => {
+      if (select.selectedIndex === 0 && config.isRequired) {
+        isValid = false;
+        this._setError(select, config.errors.unselected);
+      } else {
+        this._setSuccess(select);
+      }
+    });
+
+    return isValid;
+  }
+
   _checkAgreement(checkbox, config) {
     if (!checkbox.checked && config.isRequired) {
       this._setError(checkbox, config.errors.unchecked);
@@ -209,38 +214,52 @@ class FormValidation {
   }
 
   _showAlert(isSuccess = true) {
-    DOM.modalContent.innerHTML = '';
+    const links = {
+      catalog: 'success-catalog.html',
+      callback: 'success-callback.html'
+    };
 
-    if (!isSuccess) {
-      DOM.modalContent.insertAdjacentHTML('afterbegin', this.alertFailure.html);
-    } else {
-      DOM.modalContent.insertAdjacentHTML('afterbegin', this.alertSucces.html);
+    const url = this.isCatalog
+      ? `${window.location.protocol}//${document.domain}/${links.catalog}`
+      : `${window.location.protocol}//${document.domain}/${links.callback}`;
+
+    if (isSuccess) {
+      document.location.href = url;
     }
-
-    DOM.body.classList.add(CLASSES.scrollHidden);
-    DOM.modal.classList.add(CLASSES.active);
-    DOM.overlay.classList.add(CLASSES.active);
   }
 
   _clearInputs() {
     Object.values(this.formElements).forEach((input) => {
       if (!input) return;
-      input.value = '';
 
-      if (input.type === 'checkbox') {
-        input.checked = false;
+      if (!Array.isArray(input)) {
+        input.value = '';
+
+        if (input.type === 'checkbox') {
+          input.checked = false;
+        }
+
+        this._selectFormControl(input).classList.remove(
+          this.classes.success,
+          this.classes.error
+        );
+      } else {
+        input.forEach((el) => {
+          el.selectedIndex = 0;
+
+          this._selectFormControl(el).classList.remove(
+            this.classes.success,
+            this.classes.error
+          );
+        });
       }
-
-      this._selectFormControl(input).classList.remove(
-        this.classes.success,
-        this.classes.error
-      );
     });
   }
 
   async _send() {
     this.form.classList.add(CLASSES.loading);
 
+    this._clearInputs();
     const formData = new FormData(this.form);
 
     formData.append('form-name', this.form.name);
@@ -254,15 +273,13 @@ class FormValidation {
     );
 
     if (res.ok) {
-      if (!this.isModal) this._clearInputs();
+      this._clearInputs();
 
       this.form.classList.remove(CLASSES.loading);
 
       this._showAlert();
     } else {
       this.form.classList.remove(CLASSES.loading);
-
-      this._showAlert(false);
     }
   }
 
@@ -314,6 +331,15 @@ class FormValidation {
             config.userMsg
           )
         );
+
+      if (this.formElements.userSelects) {
+        isValid.push(
+          this._checkUserSelects(
+            this.formElements.userSelects,
+            config.userSelect
+          )
+        );
+      }
 
       if (this.formElements.userAgreement) {
         isValid.push(

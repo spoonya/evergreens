@@ -3,23 +3,19 @@ const CLASSES = {
   absolute: 'absolute',
   loading: 'loading',
   headerDark: 'header--dark',
+  modal: 'modal',
   scrollHidden: 'scroll-hidden'
 };
 
 const IDs = {
   formAlert: '#form-alert',
-  formCallMe: '#form-callme',
-  formRequest: '#form-request',
-  modal: '#modal',
+  formCallMe: '#form-biologist',
   modalYouTube: '#modal-youtube'
 };
 
 const DOM = {
   body: document.querySelector('body'),
-  header: document.querySelector('#header'),
-  headerBot: document.querySelector('#header-bottom'),
   modal: document.querySelector('#modal'),
-  modalContent: document.querySelector('#modal-content'),
   overlay: document.querySelector('#overlay')
 };
 

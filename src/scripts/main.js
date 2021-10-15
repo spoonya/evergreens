@@ -3,19 +3,35 @@ import 'core-js/es6/promise';
 import 'regenerator-runtime/runtime';
 
 import * as sliders from './sliders';
-import viewer from './compare';
-import { validateFormCatalog } from './forms';
+import initImagesCompare from './compare';
+import {
+  validateFormBiologist,
+  validateFormCatalog,
+  validateFormCatalogModal,
+  validateFormCostCare,
+  validateFormCostProduct,
+  validateFormCostCommercial,
+  validateFormQuestions
+} from './forms';
 import controlTabs from './tabs';
 import lazyLoadObserver from './lazyload';
 import controlFilterButtons from './fiter-drafts';
 import { controlUpload } from './sliders/quiz';
-
-validateFormCatalog();
-
-controlTabs();
-
-controlFilterButtons();
-
-controlUpload();
+import controlModal from './modal';
 
 lazyLoadObserver.observe();
+
+validateFormCatalog();
+validateFormBiologist();
+validateFormCostCare();
+validateFormQuestions();
+validateFormCatalogModal();
+validateFormCostCommercial();
+validateFormCostProduct();
+
+controlTabs();
+controlModal();
+controlFilterButtons();
+controlUpload();
+
+initImagesCompare();

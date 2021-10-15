@@ -5,6 +5,12 @@
   left: 0;
 
   width: 100%;
+
+  &--static {
+    position: static;
+
+    border-bottom: 1px solid $color-secondary-white;
+  }
 }
 
 .header__inner {

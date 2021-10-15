@@ -1,11 +1,16 @@
 /* eslint-disable no-undef */
-const element = document.querySelector('#image-compare');
 
-const options = {
-  smoothing: true,
-  smoothingAmount: 100
-};
+function initImagesCompare() {
+  const imagesCompare = document.querySelector('#image-compare');
 
-const viewer = new ImageCompare(element, options).mount();
+  if (!imagesCompare) return;
 
-export default viewer;
+  const options = {
+    smoothing: true,
+    smoothingAmount: 100
+  };
+
+  const viewer = new ImageCompare(imagesCompare, options).mount();
+}
+
+export default initImagesCompare;

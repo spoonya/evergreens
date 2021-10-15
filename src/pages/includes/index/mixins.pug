@@ -17,14 +17,14 @@ mixin draftsImages(imgArr, markArr)
           ul.drafts__item-list
             li= markArr[0]
             li= markArr[1]
-          +modalButton(null, 'Рассчитать стоимость')
+          +modalButton('modal-cost-product', 'Рассчитать стоимость')
       .drafts__item.drafts__item--lg
         img.drafts__item-img(src=`images/drafts/${imgArr[1]}`, width="780", height="510", alt="")
         .drafts__item-content
           ul.drafts__item-list
             li= markArr[0]
             li= markArr[1]
-          +modalButton(null, 'Рассчитать стоимость')
+          +modalButton('modal-cost-product', 'Рассчитать стоимость')
     .drafts__container.drafts__container--lg
       .drafts__container-inner
         .drafts__item.drafts__item--xl
@@ -33,14 +33,14 @@ mixin draftsImages(imgArr, markArr)
             ul.drafts__item-list
               li= markArr[0]
               li= markArr[1]
-            +modalButton(null, 'Рассчитать стоимость')
+            +modalButton('modal-cost-product', 'Рассчитать стоимость')
         .drafts__item.drafts__item--md
           img.drafts__item-img(src=`images/drafts/${imgArr[3]}`, width="460", height="600",  alt="")
           .drafts__item-content
             ul.drafts__item-list
               li= markArr[0]
               li= markArr[1]
-            +modalButton(null, 'Рассчитать стоимость')
+            +modalButton('modal-cost-product', 'Рассчитать стоимость')
       .drafts__container-inner
         .drafts__item.drafts__item--sm
           img.drafts__item-img(src=`images/drafts/${imgArr[4]}`, width="380", height="420", alt="")
@@ -48,21 +48,21 @@ mixin draftsImages(imgArr, markArr)
             ul.drafts__item-list
               li= markArr[0]
               li= markArr[1]
-            +modalButton(null, 'Рассчитать стоимость')
+            +modalButton('modal-cost-product', 'Рассчитать стоимость')
         .drafts__item.drafts__item--sm
           img.drafts__item-img(src=`images/drafts/${imgArr[5]}`, width="380", height="420", alt="")
           .drafts__item-content
             ul.drafts__item-list
               li= markArr[0]
               li= markArr[1]
-            +modalButton(null, 'Рассчитать стоимость')
+            +modalButton('modal-cost-product', 'Рассчитать стоимость')
         .drafts__item.drafts__item--sm
           img.drafts__item-img(src=`images/drafts/${imgArr[6]}`, width="380", height="420", alt="")
           .drafts__item-content
             ul.drafts__item-list
               li= markArr[0]
               li= markArr[1]
-            +modalButton(null, 'Рассчитать стоимость')
+            +modalButton('modal-cost-product', 'Рассчитать стоимость')
 
 mixin catalogSliderItem
   .catalog__item.swiper-slide
@@ -74,7 +74,7 @@ mixin catalogSliderItem
           li: span Живые гортензии
           li: span Стабилизиорванные лиственницы
         p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
-      +modalButton(null, 'Рассчитать стоимость')
+      +modalButton('modal-cost-product', 'Рассчитать стоимость')
 
 mixin reviewsVideo(img)
   li.reviews__video

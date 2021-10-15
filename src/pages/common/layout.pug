@@ -24,11 +24,23 @@ html(lang="ru")
         title Grinetto
   body
     include ../includes/common/mixins
+    include ../includes/modal/mixins
+    include header
     block header
-      include header
+      +header
     .page
       block content
       block footer
         include footer
+    +modalBiologist
+    +modalSelection
+    +modalQuestions
+    +modalStabilized
+    +modalCatalog
+    +modalCostCare
+    +modalCostCommercial
+    +modalCostProduct
+    +modalVideo
+    #overlay.overlay
     block scripts
       script(src="scripts/main.min.js")

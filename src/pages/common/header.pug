@@ -1,9 +1,10 @@
-header.header
-  .container
-    .header__inner
-      +logo
-      .header__group
-        +phone({withCallback: false})
-        button.header__callback
-          +icon('header__callback-icon', 'callback')
-          |Обратный звонок
+mixin header(modif=null)
+  header.header(class = modif)
+    .container
+      .header__inner
+        +logo
+        .header__group
+          +phone({withCallback: false})
+          button.header__callback(data-modal-target="modal-questions")
+            +icon('header__callback-icon', 'callback')
+            |Обратный звонок

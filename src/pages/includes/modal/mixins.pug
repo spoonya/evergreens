@@ -1,0 +1,337 @@
+mixin modalSocial
+  .modal__social
+    p или напишите в мессенджер
+    ul
+      li
+        a(href="#" target="_blank" rel="noopener" aria-label="telegram")
+          +icon('modal__social-icon', 'tg')
+      li
+        a(href="#" target="_blank" rel="noopener" aria-label="whatsapp")
+          +icon('modal__social-icon', 'wapp')
+
+mixin modalBiologist
+  #modal-biologist.modal
+    button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
+      +icon('modal__button-close-icon', 'close-black')
+    .modal__content
+      img.modal__img.lozad(data-src="images/modals/biologist.png", width="344", height="523", alt="")
+      .modal__form
+        h2.modal__title Чтобы подобрать подходящие живые растения, необходим выезд нашего биолога
+        h3.modal__subtitle Он оценит условия на вашем объекте и передаст информацию фитодизайнеру. Только в этом случае фитодизайнер сможет подобрать растения, которые приживутся в ваших помещениях, будут долго жить - радовать ваших гостей и сотрудников
+        form#form-biologist.form(name="Консультация биолога" action="#")
+          .form__control
+            span.form__error
+            +icon('form__control-icon', 'call')
+            input.form__input(name="form-callback-phone" type="tel" placeholder="Номер телефона" data-form-phone)
+          +submitButton('Заказать звонок')
+          .form__control
+            span.form__error
+            label.form__checkbox-wrapper
+              input.form__checkbox(name="form-callback-confident" type="checkbox" data-form-agreement)
+              span.form__checkbox-styled
+              span.form__checkbox-txt
+                |Согласен с&nbsp;
+                button(type="button") Политикой конфиденциальности сайта
+        +modalSocial
+
+mixin modalSelection
+  #modal-selection.modal
+    button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
+      +icon('modal__button-close-icon', 'close-black')
+    .modal__content
+      .modal__img-wrapper
+        img.modal__img.lozad(data-src="images/modals/designer.png", width="344", height="523", alt="")
+        .modal__img-info
+          p.modal__img-info-name Галина
+          p.modal__img-info-position Фитодизайнер с опытом 11 лет
+      .modal__form
+        h2.modal__title Я перезвоню и помогу подобрать растения
+        ul.list-rect
+          li Задам уточняющие вопросы касаемо вашего объекта и ваших предпочтений.
+          li Подберу несколько вариантов композиций под ваши предпочтения и бюджет
+        form#form-selection.form(name="Подбор растений" action="#")
+          .form__control
+            span.form__error
+            +icon('form__control-icon', 'call')
+            input.form__input(name="form-callback-phone" type="tel" placeholder="Номер телефона" data-form-phone)
+          +submitButton('Заказать звонок')
+          .form__control
+            span.form__error
+            label.form__checkbox-wrapper
+              input.form__checkbox(name="form-callback-confident" type="checkbox" data-form-agreement)
+              span.form__checkbox-styled
+              span.form__checkbox-txt
+                |Согласен с&nbsp;
+                button(type="button") Политикой конфиденциальности сайта
+        +modalSocial
+
+mixin modalQuestions
+  #modal-questions.modal
+    button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
+      +icon('modal__button-close-icon', 'close-black')
+    .modal__content
+      .modal__img-wrapper
+        img.modal__img.lozad(data-src="images/modals/designer.png", width="344", height="523", alt="")
+        .modal__img-info
+          p.modal__img-info-name Галина
+          p.modal__img-info-position Фитодизайнер с опытом 11 лет
+      .modal__form
+        h2.modal__title Я перезвоню и отвечу на все ваши вопросы
+        ul.list-rect
+          li Расскажу, какими растениями и методами мы озеленяем помещения
+          li Как добиваемся того, что живые растения сохраняют первозданный вид более 5 лет
+          li Рассчитаю ориентировочную стоимость и сроки озеленения
+        form#form-questions.form(name="Ответы на вопросы" action="#")
+          .form__control
+            span.form__error
+            +icon('form__control-icon', 'call')
+            input.form__input(name="form-callback-phone" type="tel" placeholder="Номер телефона" data-form-phone)
+          +submitButton('Заказать звонок')
+          .form__control
+            span.form__error
+            label.form__checkbox-wrapper
+              input.form__checkbox(name="form-callback-confident" type="checkbox" data-form-agreement)
+              span.form__checkbox-styled
+              span.form__checkbox-txt
+                |Согласен с&nbsp;
+                button(type="button") Политикой конфиденциальности сайта
+        +modalSocial
+
+mixin modalStabilized
+  #modal-stabilized.modal
+    button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
+      +icon('modal__button-close-icon', 'close-black')
+    .modal__content
+      img.modal__img.modal__img--sm.lozad(data-src="images/modals/stabilized.png", width="344", height="523", alt="")
+      .modal__form
+        h2.modal__title.modal__title--big
+          |Стабилизированные растения
+          span - растения, в которых заменили воду на консервирующее вещество.
+        .modal__txt
+          p Оно не позволяет флоре увядать, листва и бутоны остаются яркими и гибкими.
+          p Не осыпаются и не ломаются от прикосновений. Сохраняют яркий оттенок.
+        .modal__txt.modal__txt--big
+          p Стабилизированные растения:
+        ul.list-rect
+          li не требуют полива
+          li не подвержены заболеваниям и скоплению насекомых
+          li экологичны и безопасны для людей и животных
+        +modalButton(null, 'Получить каталог стабилизированных растений')
+
+mixin modalCatalog
+  #modal-catalog.modal.modal--big
+    button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
+      +icon('modal__button-close-icon', 'close-black')
+    .modal__content.modal__content--big.flex-col
+      .modal__form
+        h2.modal__title
+          span Скачайте каталог со 100 примерами озеленения  под ключ и готовых композиций&nbsp;
+          |с описанием и ценами и получите гарантированную скидку 5% на озеленение вашего объекта
+        h3.modal__subtitle
+          span и получите гарантированную скидку 5%&nbsp;
+          |на озеленение вашего объекта
+        p.modal__txt Куда прислать каталог?
+        form#form-catalog-modal.form(name="Каталог" action="#")
+          .form__group.justify-center
+            .form__control
+              span.form__error
+              label.form__checkbox-wrapper
+                input.form__checkbox(value="whatsapp" name="form-catalog-messenger" type="radio" data-form-messenger checked)
+                span.form__checkbox-styled
+                span.form__checkbox-txt.form__checkbox-txt--dark WhatsApp
+            .form__control
+              span.form__error
+              label.form__checkbox-wrapper
+                input.form__checkbox(value="telegram" name="form-catalog-messenger" type="radio" data-form-messenger)
+                span.form__checkbox-styled
+                span.form__checkbox-txt.form__checkbox-txt--dark Telegram
+            .form__control
+              span.form__error
+              label.form__checkbox-wrapper
+                input.form__checkbox(value="e-mail" name="form-catalog-messenger" type="radio" data-form-messenger)
+                span.form__checkbox-styled
+                span.form__checkbox-txt.form__checkbox-txt--dark E-mail
+          .form__group
+            .form__control
+              span.form__error
+              +icon('form__control-icon', 'call')
+              input.form__input(name="form-catalog-phone" type="tel" placeholder="Номер телефона" data-form-phone)
+            .form__control
+              span.form__error
+              +icon('form__control-icon', 'message')
+              input.form__input(name="form-catalog-email" type="email" placeholder="Почта" data-form-email)
+          .form__group
+            +submitButton('Получить каталог')
+            .form__control
+              span.form__error
+              label.form__checkbox-wrapper
+                input.form__checkbox(name="form-catalog-confident" type="checkbox" data-form-agreement)
+                span.form__checkbox-styled
+                span.form__checkbox-txt
+                  |Согласен с&nbsp;
+                  button(type="button") Политикой конфиденциальности сайта
+      img.modal__img.lozad(data-src="images/modals/catalog.png", width="970", height="624", alt="")
+
+mixin modalCostCare
+  #modal-cost-care.modal
+    button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
+      +icon('modal__button-close-icon', 'close-black')
+    .modal__content
+      img.modal__img.lozad(data-src="images/modals/cost.png", width="344", height="523", alt="")
+      .modal__form
+        h2.modal__title Я перезвоню и рассчитаю стоимость ухода
+        ul.list-rect
+          li Уточню какие у вас растения и в каком количестве
+          li Есть ли с ними проблемы и какие
+          li Какого плана уход нужен и как часто
+          li
+            span Вышлю коммерческое предложение с расчетом стоимости
+        form#form-cost-care.form(name="Расчёт стоимости ухода" action="#")
+          .form__control
+            span.form__error
+            +icon('form__control-icon', 'call')
+            input.form__input(name="form-callback-phone" type="tel" placeholder="Номер телефона" data-form-phone)
+          +submitButton('Заказать звонок')
+          .form__control
+            span.form__error
+            label.form__checkbox-wrapper
+              input.form__checkbox(name="form-callback-confident" type="checkbox" data-form-agreement)
+              span.form__checkbox-styled
+              span.form__checkbox-txt
+                |Согласен с&nbsp;
+                button(type="button") Политикой конфиденциальности сайта
+        +modalSocial
+
+mixin modalCostCommercial
+  #modal-cost-commercial.modal.modal--big
+    button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
+      +icon('modal__button-close-icon', 'close-black')
+    .modal__content
+      .modal__descrip
+        h2.modal__title
+          span Вы получите коммерческое предложение&nbsp;
+          |с расчетом стоимости и сроков реализации дизайна на вашем объекте
+        img.modal__img.lozad(data-src="images/modals/cost-commercial.png", width="515", height="504", alt="")
+      .modal__form
+        form#form-cost-commercial.form(name="Коммерческое предложение с расчётом стоимости" action="#")
+          p.modal__txt.modal__txt--md Какой у Вас объект?
+          .form__control.form__select
+            span.form__error
+            select.form__input(name="form-callback-square" data-form-select)
+              option(value="" disabled selected) Выберите площадь
+              option(value="50") до 50 м2
+              option(value="50-100") 50-100 м2
+              option(value="100-200") 100-200 м2
+              option(value="200-500") 200-500 м2
+              option(value="500") свыше 500 м2
+          p.modal__txt.modal__txt--md Его суммарная площадь
+          .form__control.form__select
+            span.form__error
+            select.form__input(name="form-callback-square" data-form-select)
+              option(value="" disabled selected) Выберите площадь
+              option(value="50") до 50 м2
+              option(value="50-100") 50-100 м2
+              option(value="100-200") 100-200 м2
+              option(value="200-500") 200-500 м2
+              option(value="500") свыше 500 м2
+          p.modal__txt.modal__txt--md Куда прислать расчет стоимости?
+          .form__group
+            .form__control
+              span.form__error
+              label.form__checkbox-wrapper
+                input.form__checkbox(value="whatsapp" name="form-callback-messenger" type="radio" data-form-messenger checked)
+                span.form__checkbox-styled
+                span.form__checkbox-txt.form__checkbox-txt--dark WhatsApp
+            .form__control
+              span.form__error
+              label.form__checkbox-wrapper
+                input.form__checkbox(value="telegram" name="form-callback-messenger" type="radio" data-form-messenger)
+                span.form__checkbox-styled
+                span.form__checkbox-txt.form__checkbox-txt--dark Telegram
+            .form__control
+              span.form__error
+              label.form__checkbox-wrapper
+                input.form__checkbox(value="e-mail" name="form-callback-messenger" type="radio" data-form-messenger)
+                span.form__checkbox-styled
+                span.form__checkbox-txt.form__checkbox-txt--dark E-mail
+          .form__control
+            span.form__error
+            +icon('form__control-icon', 'call')
+            input.form__input(name="form-callback-phone" type="tel" placeholder="Номер телефона" data-form-phone)
+          .form__control
+            span.form__error
+            +icon('form__control-icon', 'message')
+            input.form__input(name="form-callback-email" type="email" placeholder="Почта" data-form-email)
+          +submitButton('Получить расчет стоимости')
+          .form__control
+            span.form__error
+            label.form__checkbox-wrapper
+              input.form__checkbox(name="form-callback-confident" type="checkbox" data-form-agreement)
+              span.form__checkbox-styled
+              span.form__checkbox-txt
+                |Согласен с&nbsp;
+                button(type="button") Политикой конфиденциальности сайта
+
+mixin modalCostProduct
+  #modal-cost-product.modal
+    button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
+      +icon('modal__button-close-icon', 'close-black')
+    .modal__content
+      .modal__descrip.modal__descrip--padding
+        img.modal__img.modal__img--radius.lozad(data-src="images/modals/cost-product.png", width="200", height="250", alt="")
+        h2.modal__title-list Райский сад
+        ul.list-disc
+          li Живые гортензии
+          li Стабилизированные лиственницы
+      .modal__form
+        form#form-cost-product.form(name="Расчёт стоимости для продукта" action="#")
+          p.modal__txt.modal__txt--md Сколько растений вам нужно?
+          .form__control.form__select
+            span.form__error
+            select.form__input(name="form-callback-count" data-form-select)
+              option(value="" disabled selected) Выберите количество
+              option(value="1") 1
+              option(value="2") 2
+              option(value="3") 3
+              option(value="4") 4
+              option(value="5") 5
+          p.modal__txt.modal__txt--md Куда прислать расчет стоимости?
+          .form__group
+            .form__control
+              span.form__error
+              label.form__checkbox-wrapper
+                input.form__checkbox(value="whatsapp" name="form-callback-messenger" type="radio" data-form-messenger checked)
+                span.form__checkbox-styled
+                span.form__checkbox-txt.form__checkbox-txt--dark WhatsApp
+            .form__control
+              span.form__error
+              label.form__checkbox-wrapper
+                input.form__checkbox(value="telegram" name="form-callback-messenger" type="radio" data-form-messenger)
+                span.form__checkbox-styled
+                span.form__checkbox-txt.form__checkbox-txt--dark Telegram
+            .form__control
+              span.form__error
+              label.form__checkbox-wrapper
+                input.form__checkbox(value="e-mail" name="form-callback-messenger" type="radio" data-form-messenger)
+                span.form__checkbox-styled
+                span.form__checkbox-txt.form__checkbox-txt--dark E-mail
+          .form__control
+            span.form__error
+            +icon('form__control-icon', 'call')
+            input.form__input(name="form-callback-phone" type="tel" placeholder="Номер телефона" data-form-phone)
+          .form__control
+            span.form__error
+            +icon('form__control-icon', 'message')
+            input.form__input(name="form-callback-email" type="email" placeholder="Почта" data-form-email)
+          +submitButton('Получить расчет стоимости')
+          .form__control
+            span.form__error
+            label.form__checkbox-wrapper
+              input.form__checkbox(name="form-callback-confident" type="checkbox" data-form-agreement)
+              span.form__checkbox-styled
+              span.form__checkbox-txt
+                |Согласен с&nbsp;
+                button(type="button") Политикой конфиденциальности сайта
+
+mixin modalVideo
+  #modal-video.modal

@@ -210,7 +210,9 @@ body {
 
   opacity: 0;
   transition: 200ms ease-in-out;
-  background: rgba(0, 0, 0, 0.5);
+
+  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.5);
 
   pointer-events: none;
 
