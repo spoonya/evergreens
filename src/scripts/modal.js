@@ -1,4 +1,4 @@
-import { CLASSES, DOM } from './constants';
+import { CLASSES, DOM, IDs } from './constants';
 
 function openModal(modal) {
   if (!modal) return;
@@ -8,8 +8,26 @@ function openModal(modal) {
   DOM.overlay.classList.add(CLASSES.active);
 }
 
+function openModalVideo(modal, link) {
+  openModal(modal);
+
+  const videoTemplate = `<div class="video-section">
+    <iframe class="video" src="${link}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>`;
+
+  const modalContent = modal.querySelector(`.${CLASSES.modalContent}`);
+
+  modalContent.innerHTML = '';
+
+  modalContent.classList.add(CLASSES.loading);
+  modalContent.insertAdjacentHTML('afterbegin', videoTemplate);
+}
+
 function closeModal(modal) {
   if (!modal) return;
+
+  if (modal.id === IDs.modalVideo) {
+    modal.querySelector(`.${CLASSES.modalContent}`).innerHTML = '';
+  }
 
   modal.classList.remove(CLASSES.active);
   DOM.body.classList.remove(CLASSES.scrollHidden);
@@ -23,7 +41,15 @@ function controlModal() {
   openModalButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const modal = document.getElementById(button.dataset.modalTarget);
-      openModal(modal);
+      const { id } = modal;
+
+      if (!modal) return;
+
+      if (id === IDs.modalVideo) {
+        openModalVideo(modal, button.dataset.src);
+      } else {
+        openModal(modal);
+      }
     });
   });
 

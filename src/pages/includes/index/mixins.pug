@@ -79,7 +79,7 @@ mixin catalogSliderItem
 mixin reviewsVideo(img)
   .reviews__video
     .reviews__video-content.lozad(data-background-image=`images/reviews/video/${img}`)
-      button.reviews__video-button
+      button.reviews__video-button(data-src="https://www.youtube.com/embed/C0DPdy98e4c" data-modal-target="modal-video")
         +icon('reviews__video-button-icon', 'play-circle')
         |Смотреть видео-отзыв
     .reviews__video-info

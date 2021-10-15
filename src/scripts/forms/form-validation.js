@@ -264,22 +264,25 @@ class FormValidation {
 
     formData.append('form-name', this.form.name);
 
-    const res = await fetch(
-      `${window.location.protocol}//${document.domain}/sendmail.php`,
-      {
-        method: 'POST',
-        body: formData
+    try {
+      const res = await fetch(
+        `${window.location.protocol}//${document.domain}/sendmail.php`,
+        {
+          method: 'POST',
+          body: formData
+        }
+      );
+
+      if (res.ok) {
+        this._clearInputs();
+
+        this.form.classList.remove(CLASSES.loading);
+
+        this._showAlert();
       }
-    );
-
-    if (res.ok) {
-      this._clearInputs();
-
+    } catch (error) {
       this.form.classList.remove(CLASSES.loading);
-
-      this._showAlert();
-    } else {
-      this.form.classList.remove(CLASSES.loading);
+      console.log(error);
     }
   }
 

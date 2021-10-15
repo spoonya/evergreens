@@ -4,18 +4,16 @@ const CLASSES = {
   loading: 'loading',
   headerDark: 'header--dark',
   modal: 'modal',
+  modalContent: 'modal__content',
   scrollHidden: 'scroll-hidden'
 };
 
 const IDs = {
-  formAlert: '#form-alert',
-  formCallMe: '#form-biologist',
-  modalYouTube: '#modal-youtube'
+  modalVideo: 'modal-video'
 };
 
 const DOM = {
   body: document.querySelector('body'),
-  modal: document.querySelector('#modal'),
   overlay: document.querySelector('#overlay')
 };
 

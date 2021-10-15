@@ -1,4 +1,6 @@
 .form {
+  @include loading;
+
   textarea {
     height: 12rem;
   }

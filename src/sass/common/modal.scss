@@ -70,6 +70,8 @@
   }
 
   &__content {
+    @include loading;
+
     display: flex;
     justify-content: space-between;
 
@@ -80,6 +82,11 @@
     padding-right: 7rem;
 
     overflow: hidden;
+
+    &--video {
+      padding-top: 70px;
+      padding-right: 0;
+    }
 
     .form__group {
       margin-bottom: 0;
@@ -378,6 +385,9 @@
 
   &__button-close {
     position: absolute;
+
+    z-index: 1;
+
     top: 3rem;
     right: 3rem;
 
