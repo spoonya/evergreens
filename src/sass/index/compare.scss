@@ -4,6 +4,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  @include media-tablet-lg {
+    .container {
+      padding: 0;
+    }
+  }
 }
 
 .compare__title {
@@ -17,8 +23,18 @@
 
     display: block;
   }
+
+  @include media-tablet-lg {
+    padding: 0 15px;
+  }
+
+  @include title;
 }
 
 .compare__inner {
   border-radius: $border-r-lg;
+
+  @include media-tablet-lg {
+    border-radius: 0;
+  }
 }

@@ -13,6 +13,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include media-tablet-lg {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    grid-gap: 15px;
+  }
+
+  @include media-smartphone-sm {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .phone {
+    @include media-tablet-lg {
+      align-items: center;
+
+      &__callback {
+        align-self: unset;
+      }
+    }
+  }
 }
 
 .footer__social {
@@ -42,6 +64,12 @@
   &-icon {
     height: 40px;
     width: 40px;
+  }
+
+  @include media-tablet-lg {
+    &-txt {
+      text-align: center;
+    }
   }
 }
 

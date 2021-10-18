@@ -22,5 +22,13 @@
 
   &__callback {
     @include button-dashed;
+
+    width: fit-content;
+  }
+
+  @include media-tablet-sm {
+    &__number {
+      font-size: 16px;
+    }
   }
 }

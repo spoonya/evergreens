@@ -4,11 +4,24 @@
   background-size: cover;
 
   padding: 2.7rem 0 8.9rem;
+
+  @include media-smartphone-lg {
+    padding-bottom: 120px;
+  }
 }
 
 .quiz__inner {
   display: flex;
   justify-content: space-between;
+
+  @include media-tablet-lg {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include media-smartphone-lg {
+    margin-bottom: 50px;
+  }
 }
 
 .quiz__titles {
@@ -16,6 +29,14 @@
   width: 100%;
 
   margin-right: 8px;
+
+  @include media-tablet-lg {
+    max-width: unset;
+
+    margin-bottom: 29px;
+
+    text-align: center;
+  }
 }
 
 .quiz__title {
@@ -28,12 +49,18 @@
 
     display: block;
   }
+
+  @include title;
 }
 
 .quiz__subtitle {
   font-size: 2rem;
 
   max-width: 46.9rem;
+
+  @include media-tablet-lg {
+    max-width: unset;
+  }
 }
 
 .quiz__container {
@@ -55,6 +82,10 @@
 
   border-radius: inherit;
   border: 1px solid darken($color-secondary-white, 5);
+
+  @include media-tablet-lg {
+    padding: 25px 20px 53px 20px;
+  }
 }
 
 .quiz__counter {
@@ -77,6 +108,10 @@
   font-size: 2rem;
 
   margin-bottom: 2rem;
+
+  @include media-tablet-lg {
+    text-align: center;
+  }
 }
 
 .quiz__item {
@@ -97,6 +132,10 @@
   grid-gap: 2.5rem;
 
   min-height: 32.9rem;
+
+  @include media-smartphone-lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .form__checkbox-wrapper {
     flex-direction: column;
@@ -156,6 +195,10 @@
   justify-content: space-between;
   align-items: center;
 
+  @include media-smartphone-sm {
+    flex-direction: column;
+  }
+
   .button {
     max-width: 150px;
     width: 100%;
@@ -177,4 +220,8 @@
   align-self: unset;
 
   text-transform: uppercase;
+
+  @include media-smartphone-sm {
+    margin-bottom: 20px;
+  }
 }

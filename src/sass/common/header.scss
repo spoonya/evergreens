@@ -66,4 +66,8 @@
 
     transition: fill 0.1s linear;
   }
+
+  @include media-tablet-sm {
+    display: none;
+  }
 }

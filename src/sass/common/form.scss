@@ -13,6 +13,10 @@
 
   margin-bottom: 2rem;
 
+  @include media-smartphone-sm {
+    flex-direction: column;
+  }
+
   .form__control {
     &:not(:last-child) {
       margin-right: 19px;
@@ -255,6 +259,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  white-space: nowrap;
 
   p,
   button {

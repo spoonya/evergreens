@@ -4,6 +4,12 @@
   }
 }
 
+@mixin media-desktop-sm {
+  @media only screen and (max-width: $media-xxl-sm) {
+    @content;
+  }
+}
+
 @mixin media-laptop {
   @media only screen and (max-width: $media-xl) {
     @content;

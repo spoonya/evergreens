@@ -1,7 +1,31 @@
 import { CLASSES, DOM, IDs } from './constants';
 
+function closeModal(modal) {
+  if (!modal) return;
+
+  modal.classList.remove(CLASSES.active);
+  DOM.body.classList.remove(CLASSES.scrollHidden);
+  DOM.overlay.classList.remove(CLASSES.active);
+
+  if (modal.id === IDs.modalVideo) {
+    modal.querySelector(`.${CLASSES.modalContent}`).innerHTML = '';
+  }
+}
+
+function closeAllModals() {
+  const modals = document.querySelectorAll(
+    `.${CLASSES.modal}.${CLASSES.active}`
+  );
+
+  modals.forEach((activeModal) => {
+    closeModal(activeModal);
+  });
+}
+
 function openModal(modal) {
   if (!modal) return;
+
+  closeAllModals();
 
   DOM.body.classList.add(CLASSES.scrollHidden);
   modal.classList.add(CLASSES.active);
@@ -20,18 +44,6 @@ function openModalVideo(modal, link) {
 
   modalContent.classList.add(CLASSES.loading);
   modalContent.insertAdjacentHTML('afterbegin', videoTemplate);
-}
-
-function closeModal(modal) {
-  if (!modal) return;
-
-  if (modal.id === IDs.modalVideo) {
-    modal.querySelector(`.${CLASSES.modalContent}`).innerHTML = '';
-  }
-
-  modal.classList.remove(CLASSES.active);
-  DOM.body.classList.remove(CLASSES.scrollHidden);
-  DOM.overlay.classList.remove(CLASSES.active);
 }
 
 function controlModal() {
@@ -53,15 +65,7 @@ function controlModal() {
     });
   });
 
-  DOM.overlay.addEventListener('click', () => {
-    const modals = document.querySelectorAll(
-      `.${CLASSES.modal}.${CLASSES.active}`
-    );
-
-    modals.forEach((modal) => {
-      closeModal(modal);
-    });
-  });
+  DOM.overlay.addEventListener('click', closeAllModals);
 
   closeModalButtons.forEach((button) => {
     button.addEventListener('click', () => {

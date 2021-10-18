@@ -11,6 +11,11 @@ const swiperPrevent = new Swiper('#swiper-prevent', {
   },
   watchSlidesVisibility: true,
 
+  pagination: {
+    el: '#swiper-pagination-prevent',
+    clickable: true
+  },
+
   autoplay: {
     delay: 4000
   },
@@ -32,7 +37,7 @@ const swiperPrevent = new Swiper('#swiper-prevent', {
       slidesPerColumn: 1,
       slidesPerView: 1
     },
-    767: {
+    575: {
       slidesPerGroup: 1,
       slidesPerColumn: 1,
       slidesPerView: 2

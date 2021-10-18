@@ -5,6 +5,14 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  @include media-laptop {
+    background-position: unset;
+  }
+
+  @include media-tablet-lg {
+    background-position: center;
+  }
 }
 
 .catalog__title {
@@ -19,6 +27,8 @@
 
     display: block;
   }
+
+  @include title;
 }
 
 .catalog__slider {
@@ -33,6 +43,10 @@
   .swiper-button-next,
   .swiper-button-prev {
     top: 50%;
+
+    @media only screen and (max-width: 1350px) {
+      display: none;
+    }
   }
 }
 
@@ -131,7 +145,7 @@
   }
 
   &-img {
-    max-width: 27rem;
+    max-width: unset;
     width: 100%;
 
     object-fit: cover;
@@ -151,11 +165,28 @@
 .catalog__inner {
   display: flex;
   justify-content: space-between;
+
+  @include media-tablet-lg {
+    flex-direction: column;
+  }
 }
 
 .catalog__content {
+  display: flex;
+  flex-direction: column;
+
   max-width: 62.6rem;
   width: 100%;
+
+  @include media-tablet-lg {
+    max-width: unset;
+
+    align-items: center;
+
+    margin-bottom: 36px;
+
+    text-align: center;
+  }
 
   .catalog__title {
     margin-bottom: 2.7rem;
@@ -163,6 +194,10 @@
 
     span {
       display: unset;
+    }
+
+    @include media-tablet-lg {
+      text-align: center;
     }
   }
 
@@ -209,13 +244,13 @@
   &-icon {
     position: absolute;
 
-    bottom: -15px;
-    right: 0;
+    bottom: 0;
+    right: 1px;
 
     overflow: hidden;
 
-    width: 11rem;
-    height: 10.8rem;
+    max-width: 11rem;
+    width: 100%;
   }
 }
 
@@ -244,5 +279,18 @@
 
     font-size: 2.4rem;
     text-align: center;
+  }
+
+  @include media-tablet-lg {
+    max-width: 60rem;
+    width: 100%;
+
+    margin: 0 auto;
+  }
+
+  @include media-smartphone-sm {
+    &-inner {
+      padding: 30px 20px;
+    }
   }
 }

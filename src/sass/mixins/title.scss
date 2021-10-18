@@ -1,0 +1,13 @@
+@mixin title {
+  span {
+    font-weight: 500;
+  }
+
+  @include media-tablet-lg {
+    font-size: 22px;
+
+    span {
+      display: unset;
+    }
+  }
+}

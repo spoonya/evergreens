@@ -99,7 +99,7 @@ mixin modalQuestions
 
 mixin modalStabilized
   #modal-stabilized.modal
-    button.modal__button-close(aria-label="Закрыть форму обратной связи" data-modal-close)
+    button.modal__button-close(aria-label="Закрыть модальное окно" data-modal-close)
       +icon('modal__button-close-icon', 'close-black')
     .modal__content
       img.modal__img.modal__img--sm.lozad(data-src="images/modals/stabilized.png", width="344", height="523", alt="")
@@ -116,7 +116,7 @@ mixin modalStabilized
           li не требуют полива
           li не подвержены заболеваниям и скоплению насекомых
           li экологичны и безопасны для людей и животных
-        +modalButton(null, 'Получить каталог стабилизированных растений')
+        +modalButton('modal-catalog', 'Получить каталог стабилизированных растений')
 
 mixin modalCatalog
   #modal-catalog.modal.modal--big

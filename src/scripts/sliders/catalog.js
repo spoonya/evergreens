@@ -26,13 +26,18 @@ const swiperCatalog = new Swiper('#swiper-catalog', {
     prevEl: '.swiper-button-prev'
   },
 
+  pagination: {
+    el: '#swiper-pagination-catalog',
+    clickable: true
+  },
+
   breakpoints: {
     320: {
       slidesPerGroup: 1,
       slidesPerColumn: 1,
       slidesPerView: 1
     },
-    767: {
+    576: {
       slidesPerGroup: 1,
       slidesPerColumn: 1,
       slidesPerView: 2

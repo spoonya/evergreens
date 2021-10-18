@@ -51,6 +51,10 @@
 
 .social__content {
   margin-right: 5rem;
+
+  @include media-laptop {
+    margin-right: 0;
+  }
 }
 
 .social__back {
@@ -72,13 +76,15 @@
   font-size: 3.6rem;
   line-height: 1.4;
 
+  margin-bottom: 2rem;
+
   span {
     font-weight: 500;
 
     display: block;
-
-    margin-bottom: 2rem;
   }
+
+  @include title;
 }
 
 .social__subtitle {
@@ -88,11 +94,29 @@
 
 .social__list {
   display: flex;
+  justify-content: space-between;
+
+  @include media-laptop {
+    flex-wrap: wrap;
+  }
+
+  @include media-smartphone-lg {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.social__img {
+  max-width: 40.2rem;
+  width: 100%;
+
+  @include media-laptop {
+    display: none;
+  }
 }
 
 .social__item {
-  max-width: 18.5rem;
-  width: 100%;
+  margin-bottom: 2rem;
 
   transition: filter 0.1s linear;
 
@@ -104,7 +128,5 @@
     filter: brightness(90%);
   }
 
-  &:not(:last-child) {
-    margin-right: 2rem;
-  }
+  margin-right: 2rem;
 }

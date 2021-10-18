@@ -16,6 +16,7 @@ block content
               h2.intro__subtitle Поможем создать уют в помещении, разделить  на зоны, скрыть несовершенства планировки и подчеркнуть интерьер
             .intro__catalog-wrapper
               .intro__catalog
+                img.intro__catalog-img.intro__catalog-img--absolute.lozad(data-src="images/intro/catalog-sm.png", alt="")
                 img.intro__catalog-img(src="images/intro/catalog.png", width="208", height="202", alt="Каталог")
                 .intro__catalog-content
                   h3.intro__catalog-title
@@ -53,174 +54,7 @@ block content
                 img.lozad(data-src="images/intro/service-4.png", width="270", height="265", alt="")
 
     //Quiz
-    section.quiz.lozad(data-background-image='images/quiz/bg.png')
-      .container
-        .quiz__inner
-          .quiz__titles
-            h2.quiz__title
-              span Рассчитайте стоимость&nbsp;
-              |и сроки озеленения
-            h3.quiz__subtitle и получите индивидуальную подборку дизайнов  для вашего объекта под ваши пожелания
-          .quiz__container
-            .quiz__block
-              .quiz__counter
-                |Вопрос&nbsp;
-                span#swiper-quiz-current 1
-                |&nbsp;из&nbsp;
-                span#swiper-quiz-total 5
-              .quiz__progress
-              form.form.quiz__content(action="#")
-                #swiper-quiz.swiper-container
-                  .swiper-wrapper
-                    .quiz__item.swiper-slide
-                      h3.quiz__slide-title Какие помещения нужно озеленить?
-                      ul.quiz__images
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="office" name="quiz-space" type="radio" checked)
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-1.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Офисные помещения
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="caffe" name="quiz-space" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-2.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Кафе, ресторан, бар
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="business" name="quiz-space" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-3.png", width="160", height="120", alt="")
-                            p.quiz__item-txt ТРЦ, бизнес-центр
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="private" name="quiz-space" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-4.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Частный дом, участок
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="hotel" name="quiz-space" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-5.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Гостиница
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="other" name="quiz-space" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-6.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Другое
-                    .quiz__item.swiper-slide
-                      h3.quiz__slide-title Укажите суммарную площадь помещений
-                      ul.quiz__inputs
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="50" name="quiz-square" type="radio" checked)
-                            span.form__checkbox-styled
-                            span.form__checkbox-txt до 50 м2
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="50-100" name="quiz-square" type="radio")
-                            span.form__checkbox-styled
-                            span.form__checkbox-txt 50-100 м2
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="100-200" name="quiz-square" type="radio")
-                            span.form__checkbox-styled
-                            span.form__checkbox-txt 100-200 м2
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="200-500" name="quiz-square" type="radio")
-                            span.form__checkbox-styled
-                            span.form__checkbox-txt 200-500 м2
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="500" name="quiz-square" type="radio")
-                            span.form__checkbox-styled
-                            span.form__checkbox-txt свыше 500 м2
-                    .quiz__item.swiper-slide
-                      h3.quiz__slide-title Есть ли у вас дизайн-проект?
-                      ul.quiz__inputs
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="desing-yes" name="quiz-design" type="radio" checked)
-                            span.form__checkbox-styled
-                            span.form__checkbox-txt Да
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="design-no" name="quiz-design" type="radio")
-                            span.form__checkbox-styled
-                            span.form__checkbox-txt Нет
-                        li.form__upload
-                          label.form__upload-button
-                            +icon('form__upload-button-icon', 'upload')
-                            input#quiz-upload(type="file" name="дизайн-проект" multiple hidden)
-                            span.form__upload-button-txt Отправить проект
-                          #quiz-files-chosen.form__upload-files
-                    .quiz__item.swiper-slide
-                      h3.quiz__slide-title Какие растения вы предпочитаете?
-                      ul.quiz__images
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="live" name="quiz-plants" type="radio" checked)
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-7.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Живые
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="synthetic" name="quiz-plants" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-8.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Икусственные
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="stabilized" name="quiz-plants" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-9.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Стабилизированные
-                    .quiz__item.swiper-slide
-                      h3.quiz__slide-title Укажите дополнительные предпочтения в озеленении
-                      ul.quiz__images
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="panel" name="quiz-extra" type="radio" checked)
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-10.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Панно из мха
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="vertical-green" name="quiz-extra" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-11.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Вертикальное озеленение
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="vertical-garden" name="quiz-extra" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-12.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Вертикальный сад
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="phytowall" name="quiz-extra" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-13.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Фитостена
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="rare" name="quiz-extra" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-14.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Редкие растения
-                        li.form__control
-                          label.form__checkbox-wrapper
-                            input.form__checkbox(value="palm" name="quiz-extra" type="radio")
-                            .quiz__img-wrapper
-                              img.swiper-lazy(data-src="images/quiz/quiz-15.png", width="160", height="120", alt="")
-                            p.quiz__item-txt Пальмы
-              .quiz__controls
-                button#swiper-button-prev.quiz__button-prev Вернуться назад
-                +button('swiper-button-next', 'Далее', 'arrow-right')
+    +sectionQuiz
 
     //Drafts
     section.drafts.drafts--filters
@@ -280,6 +114,9 @@ block content
         ],
         ['Искуственные растения', 'Пальмы']
       )
+      button.drafts__more.drafts__more--hidden.container
+        +icon('drafts__more-icon', 'refresh')
+        |Показать ещё
 
     //Catalog
     section.catalog.lozad(data-background-image='images/catalog/bg.png')
@@ -290,12 +127,51 @@ block content
         .catalog__slider
           #swiper-catalog.swiper-container
             .swiper-wrapper
-              +catalogSliderItem
-              +catalogSliderItem
-              +catalogSliderItem
-              +catalogSliderItem
+              .catalog__item.swiper-slide
+                span.catalog__item-mark с автополивом
+                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-1.png", width="270", height="330" alt="")
+                .catalog__item-content
+                  .catalog__item-content-wrapper
+                    span.catalog__item-sale -20%
+                    .catalog__item-title Райский сад
+                    ul.list-disc
+                      li: span Живые гортензии
+                      li: span Стабилизиорванные лиственницы
+                    p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
+                  +modalButton('modal-cost-product', 'Рассчитать стоимость')
+              .catalog__item.swiper-slide
+                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-2.png", width="270", height="330" alt="")
+                .catalog__item-content
+                  .catalog__item-content-wrapper
+                    .catalog__item-title Райский сад
+                    ul.list-disc
+                      li: span Живые гортензии
+                      li: span Стабилизиорванные лиственницы
+                    p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
+                  +modalButton('modal-cost-product', 'Рассчитать стоимость')
+              .catalog__item.swiper-slide
+                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-3.png", width="270", height="330" alt="")
+                .catalog__item-content
+                  .catalog__item-content-wrapper
+                    .catalog__item-title Райский сад
+                    ul.list-disc
+                      li: span Живые гортензии
+                      li: span Стабилизиорванные лиственницы
+                    p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
+                  +modalButton('modal-cost-product', 'Рассчитать стоимость')
+              .catalog__item.swiper-slide
+                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-2.png", width="270", height="330" alt="")
+                .catalog__item-content
+                  .catalog__item-content-wrapper
+                    .catalog__item-title Райский сад
+                    ul.list-disc
+                      li: span Живые гортензии
+                      li: span Стабилизиорванные лиственницы
+                    p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
+                  +modalButton('modal-cost-product', 'Рассчитать стоимость')
             .swiper-button-prev
             .swiper-button-next
+            #swiper-pagination-catalog.swiper-pagination
         .catalog__inner
           .catalog__content
             h2.catalog__title
@@ -312,7 +188,7 @@ block content
                 li Заведений horeca
                 li Частных домов
               .catalog__info-icon
-                +icon(null, 'pdf')
+                img(src="images/catalog/pdf.png", alt="")
           .catalog__form
             .catalog__form-inner
               h4.catalog__form-title Куда прислать каталог?
@@ -504,6 +380,7 @@ block content
                 p.prevent__slider-item-txt Потолок не выдерживает вес подвесного озеленения, которое нарисовал дизайнер
           .swiper-button-prev
           .swiper-button-next
+          #swiper-pagination-prevent.swiper-pagination
         .prevent__inner
           .prevent__item
             .prevent__content
@@ -516,7 +393,7 @@ block content
                 li Указывает в чертеже все коммуникации, чтобы знать где можно делать вертикальное
             .prevent__item-img
               img.lozad(data-src="images/prevent/prevent-4.png", width="570", height="330", alt="")
-              +modalButton('modal-questions', 'Вызвать замерщика', null)
+              +modalButton('modal-questions', 'Вызвать замерщика')
           .prevent__item
             .prevent__content
               h3.prevent__item-title
@@ -527,7 +404,7 @@ block content
                 li Сопоставляет размеры растений и количеством места в вашем помещении
             .prevent__item-img
               img.lozad(data-src="images/prevent/prevent-5.png", width="570", height="330", alt="")
-              +modalButton('modal-cost-commercial', 'Заказать проект', null)
+              +modalButton('modal-cost-commercial', 'Заказать проект')
 
     //Director
     section.director.lozad(data-background-image='images/director/bg.png')
@@ -558,7 +435,7 @@ block content
                   p.director__descrip-name Наталья Иванова
                   p.director__descrip-post Основатель и руководитель студии озеленения Grinetto
                 img.director__descrip-signature.lozad(data-src="images/director/signature.png", width="107", height="63", alt="")
-              button.director__descrip-message
+              button.director__descrip-message(data-src="https://www.youtube.com/embed/MfL_JkcEFbE" data-modal-target="modal-video")
                 |Обращение руководителя
                 +icon('director__descrip-message-icon', 'play')
           .director__content
@@ -667,3 +544,6 @@ block content
           +reviewsImage('social/social-1.png', '02')
           +reviewsImage('social/social-1.png', '02')
           +reviewsImage('social/social-1.png', '02')
+
+    //Quiz
+    +sectionQuiz

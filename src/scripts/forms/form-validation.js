@@ -259,9 +259,7 @@ class FormValidation {
   async _send() {
     this.form.classList.add(CLASSES.loading);
 
-    this._clearInputs();
     const formData = new FormData(this.form);
-
     formData.append('form-name', this.form.name);
 
     try {
@@ -276,13 +274,12 @@ class FormValidation {
       if (res.ok) {
         this._clearInputs();
 
-        this.form.classList.remove(CLASSES.loading);
-
         this._showAlert();
       }
     } catch (error) {
-      this.form.classList.remove(CLASSES.loading);
       console.log(error);
+    } finally {
+      if (this.form) this.form.classList.remove(CLASSES.loading);
     }
   }
 

@@ -29,3 +29,38 @@
 .swiper-button-next {
   right: -60px;
 }
+
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+}
+
+.swiper-pagination {
+  display: none;
+
+  z-index: 1;
+
+  &-bullet {
+    height: 10px;
+    width: 10px;
+
+    background-color: $color-primary-gray;
+
+    &-active {
+      background-color: $color-primary-orange;
+      border: 0;
+    }
+  }
+
+  @media only screen and (max-width: 1350px) {
+    display: block;
+  }
+}

@@ -26,6 +26,8 @@
   span {
     font-weight: 500;
   }
+
+  @include title;
 }
 
 .drafts__filters {
@@ -34,6 +36,19 @@
   align-self: flex-start;
 
   margin-bottom: 2rem;
+
+  @include media-tablet-lg {
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+
+    scrollbar-width: none;
+
+    flex-wrap: nowrap;
+  }
 
   &-item {
     margin-bottom: 2rem;
@@ -50,7 +65,13 @@
 
     border-radius: $border-r-sm;
 
+    white-space: nowrap;
+
     transition: background-color 0.1s linear, color 0.1s linear;
+
+    @include media-tablet-lg {
+      border: 1px solid $color-tertiary-white;
+    }
 
     &:hover {
       color: $color-primary-black;
@@ -59,6 +80,7 @@
     &.active {
       background-color: $color-primary-orange;
       color: $color-primary-white;
+      border-color: $color-primary-orange;
     }
 
     &-icon {
@@ -78,6 +100,10 @@
   display: flex;
 
   margin-bottom: 5.1rem;
+
+  @include media-desktop-sm {
+    flex-direction: column;
+  }
 }
 
 .drafts__container {
@@ -86,6 +112,14 @@
 
   &--sm {
     flex: 2;
+
+    @include media-desktop-sm {
+      flex-direction: row;
+    }
+
+    @include media-tablet-sm {
+      flex-direction: column;
+    }
   }
 
   &--lg {
@@ -94,6 +128,16 @@
 
   &-inner {
     display: flex;
+
+    @include media-tablet-sm {
+      &:last-child {
+        display: none;
+      }
+    }
+
+    @include media-smartphone-lg {
+      flex-direction: column;
+    }
   }
 }
 
@@ -122,6 +166,10 @@
     max-height: 42rem;
     width: 100%;
     height: 100%;
+
+    @include media-desktop-sm {
+      max-height: unset;
+    }
   }
 
   &--md {
@@ -129,6 +177,10 @@
 
     max-width: 46rem;
     width: 100%;
+
+    @include media-tablet-sm {
+      max-width: unset;
+    }
   }
 
   &--lg {
@@ -136,6 +188,10 @@
     max-width: 78rem;
     width: 100%;
     height: 100%;
+
+    @include media-desktop-sm {
+      max-width: unset;
+    }
   }
 
   &--xl {
@@ -146,6 +202,23 @@
   &--md {
     max-height: 60rem;
     height: 100%;
+
+    @include media-laptop {
+      max-height: unset;
+      height: unset;
+    }
+
+    @include media-tablet-sm {
+      flex: unset;
+    }
+  }
+
+  &--xl,
+  &--md,
+  &--lg {
+    @include media-tablet-sm {
+      height: 480px;
+    }
   }
 
   &-content {
@@ -164,6 +237,10 @@
     padding: 3rem;
 
     transition: background-color 0.1s linear;
+
+    @include media-desktop {
+      padding: 2rem;
+    }
 
     .button {
       align-self: flex-start;
@@ -208,6 +285,14 @@
   &:hover {
     .drafts__more-icon {
       transform: rotate(-90deg);
+    }
+  }
+
+  &--hidden {
+    display: none;
+
+    @include media-tablet-sm {
+      display: unset;
     }
   }
 
