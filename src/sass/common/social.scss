@@ -7,6 +7,10 @@
     .social__content {
       padding-bottom: 10rem;
       padding-top: 4.5rem;
+
+      @include media-tablet-lg {
+        padding-bottom: 20px;
+      }
     }
 
     .social__img {
@@ -21,6 +25,10 @@
       span {
         margin-bottom: 0;
         display: unset;
+      }
+
+      @include media-tablet-lg {
+        margin-bottom: 30px;
       }
     }
   }
@@ -69,6 +77,10 @@
     height: 14px;
 
     vertical-align: middle;
+  }
+
+  @include media-tablet-lg {
+    margin-bottom: 25px;
   }
 }
 

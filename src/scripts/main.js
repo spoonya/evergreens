@@ -15,7 +15,6 @@ import {
 } from './forms';
 import controlTabs from './tabs';
 import lazyLoadObserver from './lazyload';
-import controlFilterButtons from './fiter-drafts';
 import { controlUpload } from './sliders/quiz';
 import controlModal from './modal';
 
@@ -31,7 +30,6 @@ validateFormCostProduct();
 
 controlTabs();
 controlModal();
-controlFilterButtons();
 controlUpload();
 
 initImagesCompare();

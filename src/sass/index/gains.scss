@@ -170,6 +170,9 @@
     right: 15px;
   }
 
+  &--top-left {
+  }
+
   &--top-left,
   &--bot-left {
     .gains__item-content {
@@ -180,6 +183,11 @@
   @include media-smartphone-sm {
     &--center {
       right: 250px;
+
+      .gains__item-content {
+        right: -80px;
+        top: -50px;
+      }
     }
 
     &--top-right {
@@ -188,6 +196,13 @@
 
     &--bot-right {
       right: 150px;
+    }
+
+    &--bot-left {
+      .gains__item-content {
+        left: -75px;
+        top: -50px;
+      }
     }
   }
 }
