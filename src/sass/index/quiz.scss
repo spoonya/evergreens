@@ -68,7 +68,7 @@
 
   max-width: 67rem;
   width: 100%;
-  min-height: 64rem;
+  min-height: 67rem;
 
   background-color: $color-primary-white;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.07);
@@ -76,6 +76,10 @@
 }
 
 .quiz__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   height: 100%;
 
   padding: 4.1rem 6rem 4.6rem 6rem;
@@ -122,6 +126,89 @@
 
     font-size: 1.4rem;
   }
+
+  &--result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-res-list {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+
+    li {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &-res-wait {
+    font-size: 1.8rem;
+    color: $color-secondary-gray;
+
+    margin-bottom: 5.5rem;
+  }
+
+  &-res-txt {
+    font-size: 2rem;
+    text-align: center;
+
+    margin-bottom: 3.4rem;
+  }
+
+  &-res-title {
+    font-size: 1.5rem;
+    color: $color-secondary-gray;
+
+    margin-bottom: 5px;
+  }
+
+  &-res-answer {
+    font-weight: 500;
+    color: $color-tertiary-black;
+  }
+
+  &-form-title {
+    font-size: 3.2rem;
+    text-align: center;
+
+    margin-bottom: 4.4rem;
+  }
+
+  &-form-txt {
+    text-align: center;
+
+    max-width: 227px;
+
+    margin-bottom: 4.8rem;
+  }
+
+  .button {
+    max-width: 32rem;
+  }
+
+  .form__checkbox-txt {
+    font-size: 1.4rem;
+    color: $color-quinary-white;
+    white-space: nowrap;
+
+    button {
+      color: $color-quinary-white;
+      border-bottom: 1px solid;
+      transition: color 0.1s linear, border-color 0.1s linear;
+    }
+
+    @include media-tablet-sm {
+      white-space: unset;
+    }
+  }
+
+  .form__input:not([data-form-select]) {
+    padding-left: 5.5rem;
+  }
 }
 
 .quiz__images {
@@ -135,6 +222,10 @@
 
   @include media-smartphone-lg {
     grid-template-columns: repeat(2, 1fr);
+
+    &--small {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   .form__checkbox-wrapper {

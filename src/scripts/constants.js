@@ -17,4 +17,9 @@ const DOM = {
   overlay: document.querySelector('#overlay')
 };
 
-export { CLASSES, DOM, IDs };
+const QUIZ = {
+  notQuizSlidesCount: 2,
+  slidesCount: 5
+};
+
+export { CLASSES, DOM, IDs, QUIZ };

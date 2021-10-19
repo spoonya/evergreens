@@ -91,7 +91,7 @@ mixin reviewsImage(img, dataNum)
     .reviews__images-item-content
       +icon('reviews__images-item-icon', 'zoom')
 
-mixin sectionQuiz
+mixin sectionQuiz(quizId)
   section.quiz
     .container
       .quiz__inner
@@ -102,14 +102,14 @@ mixin sectionQuiz
           h3.quiz__subtitle и получите индивидуальную подборку дизайнов  для вашего объекта под ваши пожелания
         .quiz__container
           .quiz__block
-            .quiz__counter
+            .quiz__counter(id= `quiz-counter-${quizId}`)
               |Вопрос&nbsp;
-              span#swiper-quiz-current 1
+              span(id= `swiper-quiz-current-${quizId}`) 1
               |&nbsp;из&nbsp;
-              span#swiper-quiz-total 5
-            .quiz__progress
+              span(id= `swiper-quiz-total-${quizId}`) 5
+            progress(id= `quiz-progress-${quizId}` max="5" value="1")
             form.form.quiz__content(action="#")
-              #swiper-quiz.swiper-container
+              .swiper-container(id= `swiper-quiz-${quizId}`)
                 .swiper-wrapper
                   .quiz__item.swiper-slide
                     h3.quiz__slide-title Какие помещения нужно озеленить?
@@ -194,12 +194,12 @@ mixin sectionQuiz
                       li.form__upload
                         label.form__upload-button
                           +icon('form__upload-button-icon', 'upload')
-                          input#quiz-upload(type="file" name="дизайн-проект" multiple hidden)
+                          input(id= `quiz-upload-${quizId}` type="file" name="дизайн-проект" multiple hidden)
                           span.form__upload-button-txt Отправить проект
-                        #quiz-files-chosen.form__upload-files
+                        .form__upload-files(id= `quiz-files-chosen-${quizId}`)
                   .quiz__item.swiper-slide
                     h3.quiz__slide-title Какие растения вы предпочитаете?
-                    ul.quiz__images
+                    ul.quiz__images.quiz__images--small
                       li.form__control
                         label.form__checkbox-wrapper
                           input.form__checkbox(value="live" name="quiz-plants" type="radio" checked)
@@ -257,6 +257,67 @@ mixin sectionQuiz
                           .quiz__img-wrapper
                             img.swiper-lazy(data-src="images/quiz/quiz-15.png", width="160", height="120", alt="")
                           p.quiz__item-txt Пальмы
+                  .quiz__item.quiz__item--result.swiper-slide
+                    h3.quiz__item-form-title Ваша подборка готова!
+                    p.quiz__item-form-txt Куда прислать каталог?
+                    form#form-quiz-1.form(name="Подборка дизайнов" action="#")
+                      .form__group
+                        .form__control
+                          span.form__error
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="whatsapp" name="form-catalog-messenger" type="radio" data-form-messenger checked)
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt.form__checkbox-txt--dark WhatsApp
+                        .form__control
+                          span.form__error
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="telegram" name="form-catalog-messenger" type="radio" data-form-messenger)
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt.form__checkbox-txt--dark Telegram
+                        .form__control
+                          span.form__error
+                          label.form__checkbox-wrapper
+                            input.form__checkbox(value="e-mail" name="form-catalog-messenger" type="radio" data-form-messenger)
+                            span.form__checkbox-styled
+                            span.form__checkbox-txt.form__checkbox-txt--dark E-mail
+                      .form__group
+                        .form__control
+                          span.form__error
+                          +icon('form__control-icon', 'call')
+                          input.form__input(name="form-catalog-phone" type="tel" placeholder="Номер телефона" data-form-phone)
+                        .form__control
+                          span.form__error
+                          +icon('form__control-icon', 'message')
+                          input.form__input(name="form-catalog-email" type="email" placeholder="Почта" data-form-email)
+                      +submitButton('Получить подборку дизайнов')
+                      .form__control
+                        span.form__error
+                        label.form__checkbox-wrapper
+                          input.form__checkbox(name="form-catalog-confident" type="checkbox" data-form-agreement)
+                          span.form__checkbox-styled
+                          span.form__checkbox-txt
+                            |Согласен с&nbsp;
+                            button(type="button") Политикой конфиденциальности сайта
+                  .quiz__item.quiz__item--result.swiper-slide
+                    .quiz__item-res
+                      p.quiz__item-res-wait Подождите...
+                      p.quiz__item-res-txt Рассчитываем сроки и формируем индивидуальную подборку дизайнов по вашим параметрам
+                      ul.quiz__item-res-list
+                        li
+                          h4.quiz__item-res-title Объект:
+                          p.quiz__item-res-answer Офис
+                        li
+                          h4.quiz__item-res-title Площадь:
+                          p.quiz__item-res-answer 200-500м2
+                        li
+                          h4.quiz__item-res-title Дизайн-проект:
+                          p.quiz__item-res-answer Нет
+                        li
+                          h4.quiz__item-res-title Растения:
+                          p.quiz__item-res-answer Живые, искусственные
+                        li
+                          h4.quiz__item-res-title Предпочтения:
+                          p.quiz__item-res-answer Вертикальный сад, фитостена, панно из мха
             .quiz__controls
-              button#swiper-button-prev.quiz__button-prev Вернуться назад
-              +button('swiper-button-next', 'Далее', 'arrow-right')
+              button(id= `swiper-button-prev-${quizId}`).quiz__button-prev Вернуться назад
+              +button(`swiper-button-next-${quizId}`, 'Далее', 'arrow-right')
