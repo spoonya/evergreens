@@ -66,8 +66,6 @@
     color: $color-primary-gray;
     font-size: 14px;
 
-    border-radius: $border-r-sm;
-
     margin-right: 15px;
     margin-bottom: 15px;
 
@@ -89,21 +87,16 @@
 
       padding: 2rem 3rem;
 
+      border-radius: $border-r-sm;
+
       @include media-tablet-lg {
         padding: 15px 20px;
-
-        border-radius: none;
       }
     }
 
     & input:checked + span {
       background-color: $color-primary-orange;
       color: $color-primary-white;
-      border-radius: $border-r-sm;
-
-      @include media-tablet-sm {
-        border-radius: 0;
-      }
     }
 
     &-icon {
