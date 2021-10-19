@@ -74,10 +74,6 @@
     white-space: nowrap;
     user-select: none;
 
-    @include media-tablet-lg {
-      border: 1px solid $color-primary-orange;
-    }
-
     &:hover {
       color: $color-primary-black;
     }

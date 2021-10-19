@@ -219,6 +219,10 @@ body {
 
   cursor: pointer;
 
+  @include media-laptop {
+    backdrop-filter: none;
+  }
+
   &.active {
     opacity: 1;
 
