@@ -103,9 +103,10 @@
     & input:checked + span {
       background-color: $color-primary-orange;
       color: $color-primary-white;
+      border-radius: $border-r-sm;
 
       @include media-tablet-sm {
-        border-radius: none;
+        border-radius: 0;
       }
     }
 
