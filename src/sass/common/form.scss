@@ -13,6 +13,10 @@
 
   margin-bottom: 2rem;
 
+  @include media-tablet-sm {
+    flex-direction: column;
+  }
+
   @include media-smartphone-sm {
     flex-direction: column;
   }
@@ -20,6 +24,10 @@
   .form__control {
     &:not(:last-child) {
       margin-right: 19px;
+
+      @include media-tablet-sm {
+        margin-right: 0;
+      }
     }
   }
 }

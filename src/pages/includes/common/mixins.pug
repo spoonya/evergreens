@@ -10,7 +10,7 @@ mixin phone(obj)
   .phone
     a.phone__number(href="tel:89032038690") 8 903 203-86-90
     if obj.withCallback
-      button.phone__callback Обратный звонок
+      button.phone__callback(data-modal-target="modal-questions") Обратный звонок
     else
       p.phone__worktime Ежедневно с 9.00 до 20.00
 

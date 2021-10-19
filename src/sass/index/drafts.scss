@@ -92,11 +92,21 @@
       transition: background-color 0.1s linear, color 0.1s linear;
 
       padding: 2rem 3rem;
+
+      @include media-tablet-lg {
+        padding: 15px 20px;
+
+        border-radius: none;
+      }
     }
 
     & input:checked + span {
       background-color: $color-primary-orange;
       color: $color-primary-white;
+
+      @include media-tablet-sm {
+        border-radius: none;
+      }
     }
 
     &-icon {
