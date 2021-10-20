@@ -108,7 +108,7 @@ mixin sectionQuiz(quizId)
               |&nbsp;из&nbsp;
               span(id=`swiper-quiz-total-${quizId}`) 5
             progress(id=`quiz-progress-${quizId}` max="5" value="1")
-            form.form.quiz__content(id=`form-quiz-${quizId}` action="#")
+            form.form.quiz__content(name="Подборка дизайнов" id=`form-quiz-${quizId}` action="#")
               .swiper-container(id=`swiper-quiz-${quizId}`)
                 .swiper-wrapper
                   .quiz__item.swiper-slide(id=`quiz-question-place-${quizId}`)
@@ -192,7 +192,7 @@ mixin sectionQuiz(quizId)
                           span.form__checkbox-styled
                           span.form__checkbox-txt Нет
                       li.form__upload(id= `quiz-upload-block-${quizId}`)
-                        span.form__error(id= `quiz-up-error-${quizId}`)
+                        span.form__error(id= `quiz-upload-error-${quizId}`)
                         label.form__upload-button
                           +icon('form__upload-button-icon', 'upload')
                           input(id= `quiz-upload-${quizId}` accept=".doc, .docx, .odt, .pdf, .tex, .txt, .rtf, .wps, .wks, .wpd)" type="file" name="дизайн-проект" multiple hidden)

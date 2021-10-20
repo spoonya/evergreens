@@ -122,9 +122,6 @@ function controlUpload() {
 
   const appendChosenFiles = (name) => {
     const fileTemplate = `<p>${name}
-                            <svg>
-                              <use xlink:href="images/sprite.svg#close-square"></use>
-                            </svg>
                           </p>`;
 
     filesChosenEl.insertAdjacentHTML('beforeend', fileTemplate);
@@ -185,8 +182,10 @@ function controlProgress() {
   });
 }
 
-controlUpload();
-controlProgress();
-controlRadioButtons();
+if (document.querySelector('#swiper-quiz-1')) {
+  controlUpload();
+  controlProgress();
+  controlRadioButtons();
+}
 
 export default swiperQuiz1;

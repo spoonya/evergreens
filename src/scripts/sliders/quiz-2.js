@@ -185,8 +185,10 @@ function controlProgress() {
   });
 }
 
-controlUpload();
-controlProgress();
-controlRadioButtons();
+if (document.querySelector('#swiper-quiz-2')) {
+  controlUpload();
+  controlProgress();
+  controlRadioButtons();
+}
 
 export default swiperQuiz2;
