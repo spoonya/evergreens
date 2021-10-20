@@ -5,3 +5,5 @@ export { default as validateFormCostCare } from './cost-care';
 export { default as validateFormCostCommercial } from './cost-commercial';
 export { default as validateFormCostProduct } from './cost-product';
 export { default as validateFormQuestions } from './questions';
+export { default as validateFormQuiz1 } from './quiz-1';
+export { default as validateFormQuiz2 } from './quiz-2';

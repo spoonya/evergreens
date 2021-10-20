@@ -11,7 +11,9 @@ import {
   validateFormCostCare,
   validateFormCostProduct,
   validateFormCostCommercial,
-  validateFormQuestions
+  validateFormQuestions,
+  validateFormQuiz1,
+  validateFormQuiz2
 } from './forms';
 import controlTabs from './tabs';
 import lazyLoadObserver from './lazyload';
@@ -26,6 +28,8 @@ validateFormQuestions();
 validateFormCatalogModal();
 validateFormCostCommercial();
 validateFormCostProduct();
+validateFormQuiz1();
+validateFormQuiz2();
 
 controlTabs();
 controlModal();

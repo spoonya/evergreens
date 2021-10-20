@@ -47,7 +47,7 @@
     width: 14px;
     height: 14px;
 
-    top: 50%;
+    top: 52%;
     left: 3rem;
 
     fill: #d1d1d1;
@@ -205,6 +205,8 @@
 }
 
 .form__upload {
+  position: relative;
+
   padding: 3rem;
 
   border-radius: $border-r-lg;

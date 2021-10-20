@@ -20,7 +20,7 @@ mixin modalButton(target, txt, icon= null)
       +icon('button__icon', icon)
 
 mixin submitButton(txt)
-  button.button.button--submit= txt
+  button.button.button--submit(type="submit")= txt
 
 mixin button(id, txt, icon)
   button.button(id= id type="button")= txt

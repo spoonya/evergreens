@@ -68,7 +68,6 @@
 
   max-width: 67rem;
   width: 100%;
-  min-height: 67rem;
 
   background-color: $color-primary-white;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.07);
@@ -80,6 +79,7 @@
   flex-direction: column;
   justify-content: center;
 
+  min-height: 68.3rem;
   height: 100%;
 
   padding: 4.1rem 6rem 4.6rem 6rem;
@@ -89,6 +89,15 @@
 
   @include media-tablet-lg {
     padding: 25px 20px 53px 20px;
+  }
+
+  @include media-tablet-sm {
+    min-height: unset;
+    padding: 25px;
+  }
+
+  @include media-smartphone-sm {
+    padding: 15px 8px;
   }
 }
 
@@ -132,6 +141,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .form__input:not([type='radio']) {
+      @include media-tablet-sm {
+        min-width: 282px;
+      }
+
+      @include media-smartphone-sm {
+        min-width: unset;
+      }
+    }
   }
 
   &-res-list {
@@ -143,11 +162,16 @@
     li {
       margin-bottom: 3rem;
     }
+
+    @include media-smartphone-lg {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &-res-wait {
     font-size: 1.8rem;
     color: $color-secondary-gray;
+    text-align: center;
 
     margin-bottom: 5.5rem;
   }
@@ -190,6 +214,10 @@
     max-width: 32rem;
   }
 
+  .form__group {
+    margin-bottom: 0;
+  }
+
   .form__checkbox-txt {
     font-size: 1.4rem;
     color: $color-quinary-white;
@@ -198,6 +226,7 @@
     button {
       color: $color-quinary-white;
       border-bottom: 1px solid;
+      white-space: nowrap;
       transition: color 0.1s linear, border-color 0.1s linear;
     }
 
