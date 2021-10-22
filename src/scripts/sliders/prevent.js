@@ -31,7 +31,9 @@ const swiperPrevent = new Swiper('#swiper-prevent', {
     320: {
       slidesPerGroup: 1,
       slidesPerColumn: 1,
-      slidesPerView: 1
+      slidesPerView: 1,
+
+      allowTouchMove: true
     },
     575: {
       slidesPerGroup: 1,

@@ -147,11 +147,12 @@ block content
           span Готовые композиции растений&nbsp;
           |в кашпо от дизайнеров Evergreens
         .catalog__slider
+          .swiper-button-prev
           #swiper-catalog.swiper-container
             .swiper-wrapper
               .catalog__item.swiper-slide
                 span.catalog__item-mark с автополивом
-                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-1.png", width="270", height="330" alt="")
+                img.catalog__item-img(src="images/catalog/catalog-1.png", width="270", height="330" alt="")
                 .catalog__item-content
                   .catalog__item-content-wrapper
                     span.catalog__item-sale -20%
@@ -162,7 +163,7 @@ block content
                     p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
                   +modalButton('modal-cost-product', 'Рассчитать стоимость')
               .catalog__item.swiper-slide
-                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-2.png", width="270", height="330" alt="")
+                img.catalog__item-img(src="images/catalog/catalog-2.png", width="270", height="330" alt="")
                 .catalog__item-content
                   .catalog__item-content-wrapper
                     .catalog__item-title Райский сад
@@ -172,7 +173,7 @@ block content
                     p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
                   +modalButton('modal-cost-product', 'Рассчитать стоимость')
               .catalog__item.swiper-slide
-                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-3.png", width="270", height="330" alt="")
+                img.catalog__item-img(src="images/catalog/catalog-3.png", width="270", height="330" alt="")
                 .catalog__item-content
                   .catalog__item-content-wrapper
                     .catalog__item-title Райский сад
@@ -182,7 +183,7 @@ block content
                     p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
                   +modalButton('modal-cost-product', 'Рассчитать стоимость')
               .catalog__item.swiper-slide
-                img.catalog__item-img.swiper-lazy(data-src="images/catalog/catalog-2.png", width="270", height="330" alt="")
+                img.catalog__item-img(src="images/catalog/catalog-2.png", width="270", height="330" alt="")
                 .catalog__item-content
                   .catalog__item-content-wrapper
                     .catalog__item-title Райский сад
@@ -191,9 +192,8 @@ block content
                       li: span Стабилизиорванные лиственницы
                     p.catalog__item-txt Растения родом из настоящих джунглей Подмосковья. Быстро растут и разрастаются за погода до 40 кв.м.  Прятно трогать листики.
                   +modalButton('modal-cost-product', 'Рассчитать стоимость')
-            .swiper-button-prev
-            .swiper-button-next
             #swiper-pagination-catalog.swiper-pagination
+          .swiper-button-next
         .catalog__inner
           .catalog__content
             h2.catalog__title

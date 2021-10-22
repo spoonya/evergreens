@@ -38,6 +38,10 @@
 .catalog__slider {
   position: relative;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   margin-bottom: 11.8rem;
 
   .swiper-container {
@@ -56,11 +60,64 @@
   @media only screen and (max-width: 1350px) {
     .swiper-button-next,
     .swiper-button-prev {
+      position: relative;
+    }
+
+    .swiper-button-prev {
+      left: 15px;
+    }
+
+    .swiper-button-next {
+      right: 15px;
+    }
+
+    .swiper-container {
+      margin: 0 50px;
+    }
+  }
+
+  @include media-tablet-sm {
+    .swiper-button-next,
+    .swiper-button-prev {
       display: none;
+    }
+
+    .swiper-container {
+      margin: 0;
     }
 
     .swiper-pagination {
       display: block;
+    }
+  }
+
+  @include media-smartphone-lg {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: flex;
+    }
+
+    .swiper-container {
+      margin: 0 50px;
+    }
+
+    .swiper-pagination {
+      display: none;
+    }
+  }
+
+  @include media-smartphone-sm {
+    .swiper-container {
+      margin: 0;
+    }
+
+    .swiper-pagination {
+      display: block;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
     }
   }
 }
