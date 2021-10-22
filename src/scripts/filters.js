@@ -5,16 +5,32 @@ const filter = document.querySelector('#filter-drafts');
 const filterList = document.querySelector('#drafts-filters-select');
 const filterListActive = document.querySelector('#drafts-filters-select span');
 
+let isOnMedia = false;
+
 function setFiltersType() {
-  if (!isMediaBreakpoint()) {
+  if (isMediaBreakpoint() && isOnMedia) return;
+
+  if (isMediaBreakpoint()) {
+    isOnMedia = true;
+
     filter.querySelectorAll('input').forEach((el) => {
-      el.type = 'checkbox';
-    });
-  } else {
-    filter.querySelectorAll('input').forEach((el, idx) => {
       el.type = 'radio';
 
-      if (idx === 0) el.checked = true;
+      if (el.checked) {
+        filterListActive.textContent = el
+          .closest('label')
+          .querySelector('span').textContent;
+
+        el.checked = true;
+      } else {
+        el.checked = false;
+      }
+    });
+  } else {
+    isOnMedia = false;
+
+    filter.querySelectorAll('input').forEach((el) => {
+      el.type = 'checkbox';
     });
   }
 }
