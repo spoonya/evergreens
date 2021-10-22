@@ -6,8 +6,8 @@
   background-position: center 70px;
   background-size: cover;
 
-  @include media-laptop {
-    background-position: center 110px;
+  @include media-desktop {
+    background-position: center 125px;
   }
 
   @include media-tablet-lg {

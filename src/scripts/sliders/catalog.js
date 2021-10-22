@@ -41,7 +41,7 @@ const swiperCatalog = new Swiper('#swiper-catalog', {
       slidesPerColumn: 1,
       slidesPerView: 3
     },
-    1400: {
+    1350: {
       slidesPerGroup: 1,
       slidesPerColumn: 1,
       slidesPerView: 4

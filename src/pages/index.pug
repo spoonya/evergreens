@@ -439,7 +439,7 @@ block content
                 +icon('director__item-icon', 'ruler')
                 p.director__item-txt
                   span Любой образец мы можем изменить&nbsp;
-                  |как Вы захотите и изготовить в нужных размерам в нужном количестве
+                  |как Вы захотите изготовить в нужных размерам в нужном количестве
               li.director__item
                 +icon('director__item-icon', 'plant')
                 p.director__item-txt
@@ -534,13 +534,17 @@ block content
     section.reviews.lozad(data-background-image='images/reviews/bg.png')
       .container
         h2.reviews__title Отзывы заказчиков
-        ul#filter-tabs.reviews__filters(data-tabs)
-          li.reviews__filters-item
-            a.reviews__filters-button(href="#videos" data-tabby-default) Видео
-          li.reviews__filters-item
-            a.reviews__filters-button(href="#gratitudes") Благодарности
-          li.reviews__filters-item
-            a.reviews__filters-button(href="#socials") В социальных сетях
+        .reviews__filters-wrapper
+          #reviews-filters-select.reviews__filters-select
+            span Видео
+            +icon('reviews__filters-select-icon', 'arrow-down')
+          ul#filter-tabs.reviews__filters(data-tabs)
+            li.reviews__filters-item
+              a.reviews__filters-button(href="#videos" data-tabby-default) Видео
+            li.reviews__filters-item
+              a.reviews__filters-button(href="#gratitudes") Благодарности
+            li.reviews__filters-item
+              a.reviews__filters-button(href="#socials") В социальных сетях
         #videos.reviews__tab.reviews__videos
           +reviewsVideo('video-1.png')
           +reviewsVideo('video-1.png')
