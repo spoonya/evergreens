@@ -166,7 +166,9 @@
   @include media-tablet-lg {
     grid-template-columns: repeat(2, 1fr);
 
-    bottom: 0;
+    bottom: 120px;
+
+    margin-bottom: -125px;
   }
 
   @include media-smartphone-lg {
