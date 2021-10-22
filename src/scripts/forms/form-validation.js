@@ -1,3 +1,5 @@
+import IMask from 'imask';
+
 import { CLASSES } from '../constants';
 
 class FormValidation {
@@ -32,6 +34,10 @@ class FormValidation {
       },
       userPhone: {
         isRequired: true,
+        maskLength: 16,
+        maskOptions: {
+          mask: '+{7}(000)000-00-00'
+        },
         errors: {
           empty: 'Введите номер',
           invalid: 'Введите корректный номер'
@@ -71,6 +77,11 @@ class FormValidation {
         }
       }
     };
+
+    const mask = IMask(
+      this.formElements.userPhone,
+      this.defaultConfig.userPhone.maskOptions
+    );
   }
 
   _validateEmail(email) {
@@ -78,20 +89,6 @@ class FormValidation {
       /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
 
     return regex.test(String(email).toLowerCase());
-  }
-
-  _validatePhone(phoneNumber) {
-    phoneNumber = phoneNumber.replace(/\s+/g, '');
-
-    if (phoneNumber.split('')[0] !== '+') {
-      phoneNumber = `+${phoneNumber}`;
-    }
-
-    this.formElements.userPhone.value = phoneNumber;
-
-    const regex = /^((\+7|7|8)+([0-9]){10})$|\b\d{3}[-.]?\d{3}[-.]?\d{4}/g;
-
-    return regex.test(String(phoneNumber));
   }
 
   _selectFormControl(input) {
@@ -133,7 +130,7 @@ class FormValidation {
       return false;
     }
 
-    if (userPhoneValue && !this._validatePhone(userPhoneValue)) {
+    if (userPhoneValue && userPhoneValue.length !== config.maskLength) {
       this._setError(userPhone, config.errors.invalid);
 
       return false;

@@ -2,16 +2,11 @@
   display: flex;
   align-items: center;
 
-  &__name {
-    font-weight: 500;
-    font-size: 2.8rem;
-    color: $color-primary-white;
+  &__icon {
+    height: 21px;
+    width: 193px;
 
-    padding: 1.8rem 3rem;
     margin-right: 3rem;
-
-    border-radius: $border-r-sm;
-    background-color: $color-primary-green;
   }
 
   &__descrip {
@@ -23,15 +18,12 @@
   }
 
   @include media-tablet-sm {
-    &__name {
-      font-size: 16px;
-
-      margin-right: 10px;
-      padding: 15px;
-    }
-
     &__descrip {
       display: none;
+    }
+
+    &__icon {
+      margin-right: 0;
     }
   }
 }

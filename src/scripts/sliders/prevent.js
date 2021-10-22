@@ -5,6 +5,8 @@ const swiperPrevent = new Swiper('#swiper-prevent', {
 
   spaceBetween: 30,
 
+  allowTouchMove: false,
+
   preloadImages: false,
   lazy: {
     loadPrevNext: true
@@ -15,12 +17,6 @@ const swiperPrevent = new Swiper('#swiper-prevent', {
     el: '#swiper-pagination-prevent',
     clickable: true
   },
-
-  autoplay: {
-    delay: 4000
-  },
-
-  grabCursor: true,
 
   resizeObserver: true,
   observer: true,
@@ -40,7 +36,9 @@ const swiperPrevent = new Swiper('#swiper-prevent', {
     575: {
       slidesPerGroup: 1,
       slidesPerColumn: 1,
-      slidesPerView: 2
+      slidesPerView: 2,
+
+      allowTouchMove: true
     },
     992: {
       slidesPerGroup: 1,

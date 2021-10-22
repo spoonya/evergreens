@@ -3,16 +3,8 @@
   padding-bottom: 8.9rem;
 
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 70px;
   background-size: cover;
-
-  @include media-laptop {
-    background-position: unset;
-  }
-
-  @include media-tablet-lg {
-    background-position: center;
-  }
 }
 
 .catalog__title {
@@ -40,12 +32,23 @@
     padding-top: 2rem;
   }
 
+  .swiper-pagination {
+    display: none;
+  }
+
   .swiper-button-next,
   .swiper-button-prev {
     top: 50%;
+  }
 
-    @media only screen and (max-width: 1350px) {
+  @media only screen and (max-width: 1350px) {
+    .swiper-button-next,
+    .swiper-button-prev {
       display: none;
+    }
+
+    .swiper-container {
+      display: block;
     }
   }
 }

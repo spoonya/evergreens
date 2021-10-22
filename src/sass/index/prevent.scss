@@ -32,12 +32,15 @@
 
   margin-bottom: 8.5rem;
 
-  @media only screen and (max-width: 1350px) {
+  .swiper-pagination {
+    display: none;
+  }
+
+  @include media-tablet-lg {
     margin-bottom: 60px;
 
-    .swiper-button-prev,
-    .swiper-button-next {
-      display: none;
+    .swiper-pagination {
+      display: block;
     }
   }
 }
@@ -92,8 +95,6 @@
 
     span {
       font-weight: 500;
-
-      display: block;
     }
 
     @include media-tablet-lg {

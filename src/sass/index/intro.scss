@@ -43,19 +43,14 @@
 
   @include title;
 
-  @include media-smartphone-lg {
+  @include media-smartphone-sm {
     font-size: 22px;
-    text-align: center;
   }
 }
 
 .intro__subtitle {
   font-size: 2.2rem;
   line-height: 1.3;
-
-  @include media-smartphone-lg {
-    text-align: center;
-  }
 }
 
 .intro__catalog-wrapper {

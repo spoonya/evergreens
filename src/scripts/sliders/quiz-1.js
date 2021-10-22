@@ -24,15 +24,24 @@ function setAnswers() {
     .querySelector('#quiz-question-design-1 input:checked')
     .closest('label')
     .querySelector('.form__checkbox-txt').textContent;
-  const plantsTxt = document
-    .querySelector('#quiz-question-plants-1 input:checked')
-    .closest('label')
-    .querySelector('span').textContent;
+  const plantsArr = [
+    ...document.querySelectorAll('#quiz-question-plants-1 input:checked')
+  ].map((el) => el.closest('label').querySelector('span').textContent);
   const extraArr = [
     ...document.querySelectorAll('#quiz-question-extra-1 input:checked')
   ].map((el) => el.closest('label').querySelector('span').textContent);
 
   const extraTxt = extraArr
+    .map((el, idx) => {
+      if (idx > 0) {
+        return el.split()[0].toLowerCase();
+      }
+
+      return el;
+    })
+    .join(', ');
+
+  const plantsTxt = plantsArr
     .map((el, idx) => {
       if (idx > 0) {
         return el.split()[0].toLowerCase();
