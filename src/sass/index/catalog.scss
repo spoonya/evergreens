@@ -5,6 +5,18 @@
   background-repeat: no-repeat;
   background-position: center 70px;
   background-size: cover;
+
+  @include media-laptop {
+    background-position: center 110px;
+  }
+
+  @include media-tablet-lg {
+    background-position: center;
+  }
+
+  @include media-smartphone-lg {
+    background-position: auto;
+  }
 }
 
 .catalog__title {
@@ -47,7 +59,7 @@
       display: none;
     }
 
-    .swiper-container {
+    .swiper-pagination {
       display: block;
     }
   }
