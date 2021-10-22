@@ -6,6 +6,10 @@ const buttonNext = document.querySelector('#swiper-button-next-1');
 const buttonPrev = document.querySelector('#swiper-button-prev-1');
 const counter = document.querySelector('#quiz-counter-1');
 const progress = document.querySelector('#quiz-progress-1');
+const progressLoading = document.querySelector('#quiz-progress-loading-1');
+const progressLoadingPerc = document.querySelector(
+  '#quiz-progress-loading-percent-1'
+);
 const quizDesignYes = document.querySelector('#quiz-design-yes-1');
 const quizDesignNo = document.querySelector('#quiz-design-no-1');
 const quizUploadBlock = document.querySelector('#quiz-upload-block-1');
@@ -64,6 +68,17 @@ function setAnswers() {
   extraAnswer.textContent = extraTxt;
 }
 
+function startLoading() {
+  const timer = setInterval(() => {
+    progressLoading.value += 1;
+    progressLoadingPerc.textContent = `${
+      (progressLoading.value / progressLoading.max) * 100
+    }%`;
+  }, 1000);
+
+  return timer;
+}
+
 const swiperQuiz1 = new Swiper('#swiper-quiz-1', {
   slidesPerColumnFill: 'row',
 
@@ -101,7 +116,12 @@ const swiperQuiz1 = new Swiper('#swiper-quiz-1', {
       if (this.realIndex + 1 > QUIZ.slidesCount) {
         setAnswers();
 
-        setTimeout(() => this.slideNext(), 4000);
+        const loading = startLoading();
+
+        setTimeout(() => {
+          clearInterval(loading);
+          this.slideNext();
+        }, 6000);
       }
     }
   },

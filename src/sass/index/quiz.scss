@@ -79,7 +79,7 @@
   flex-direction: column;
   justify-content: center;
 
-  min-height: 68.3rem;
+  min-height: 72.5rem;
   height: 100%;
 
   padding: 4.1rem 6rem 4.6rem 6rem;
@@ -342,5 +342,17 @@
 
   @include media-smartphone-sm {
     margin-bottom: 20px;
+  }
+}
+
+.quiz__progress-res {
+  margin-bottom: 6.5rem;
+
+  p {
+    text-align: center;
+    font-size: 2.4rem;
+    color: $color-primary-orange;
+
+    margin-bottom: 2rem;
   }
 }

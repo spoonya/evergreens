@@ -262,6 +262,11 @@ mixin sectionQuiz(quizId)
                     .quiz__item-res
                       p.quiz__item-res-wait Подождите...
                       p.quiz__item-res-txt Рассчитываем сроки и формируем индивидуальную подборку дизайнов по вашим параметрам
+                      .quiz__progress-res
+                        p
+                          |Готово:&nbsp;
+                          span(id=`quiz-progress-loading-percent-${quizId}`) 0%
+                        progress(id=`quiz-progress-loading-${quizId}` max="5" value="0")
                       ul.quiz__item-res-list
                         li
                           h4.quiz__item-res-title Объект:

@@ -6,6 +6,10 @@ const buttonNext = document.querySelector('#swiper-button-next-2');
 const buttonPrev = document.querySelector('#swiper-button-prev-2');
 const counter = document.querySelector('#quiz-counter-2');
 const progress = document.querySelector('#quiz-progress-2');
+const progressLoading = document.querySelector('#quiz-progress-loading-2');
+const progressLoadingPerc = document.querySelector(
+  '#quiz-progress-loading-percent-2'
+);
 const quizDesignYes = document.querySelector('#quiz-design-yes-2');
 const quizDesignNo = document.querySelector('#quiz-design-no-2');
 const quizUploadBlock = document.querySelector('#quiz-upload-block-2');
@@ -64,7 +68,18 @@ function setAnswers() {
   extraAnswer.textContent = extraTxt;
 }
 
-const swiperQuiz2 = new Swiper('#swiper-quiz-2', {
+function startLoading() {
+  const timer = setInterval(() => {
+    progressLoading.value += 1;
+    progressLoadingPerc.textContent = `${
+      (progressLoading.value / progressLoading.max) * 100
+    }%`;
+  }, 1000);
+
+  return timer;
+}
+
+const swiperQuiz1 = new Swiper('#swiper-quiz-2', {
   slidesPerColumnFill: 'row',
 
   spaceBetween: 20,
@@ -101,7 +116,12 @@ const swiperQuiz2 = new Swiper('#swiper-quiz-2', {
       if (this.realIndex + 1 > QUIZ.slidesCount) {
         setAnswers();
 
-        setTimeout(() => this.slideNext(), 4000);
+        const loading = startLoading();
+
+        setTimeout(() => {
+          clearInterval(loading);
+          this.slideNext();
+        }, 6000);
       }
     }
   },
@@ -131,9 +151,6 @@ function controlUpload() {
 
   const appendChosenFiles = (name) => {
     const fileTemplate = `<p>${name}
-                            <svg>
-                              <use xlink:href="images/sprite.svg#close-square"></use>
-                            </svg>
                           </p>`;
 
     filesChosenEl.insertAdjacentHTML('beforeend', fileTemplate);
@@ -200,4 +217,4 @@ if (document.querySelector('#swiper-quiz-2')) {
   controlRadioButtons();
 }
 
-export default swiperQuiz2;
+export default swiperQuiz1;

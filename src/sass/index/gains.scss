@@ -128,8 +128,8 @@
 
     padding: 2.7rem 3rem;
 
-    max-width: 23rem;
-    min-width: 23rem;
+    max-width: 26rem;
+    min-width: 26rem;
 
     background-color: $color-primary-white;
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
@@ -170,9 +170,6 @@
     right: 15px;
   }
 
-  &--top-left {
-  }
-
   &--top-left,
   &--bot-left {
     .gains__item-content {
@@ -192,6 +189,10 @@
 
     &--top-right {
       right: 140px;
+    }
+
+    &--top-left {
+      left: 115px;
     }
 
     &--bot-right {
