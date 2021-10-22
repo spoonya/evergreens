@@ -1,0 +1,37 @@
+@mixin select {
+  display: none;
+
+  margin-bottom: 37px;
+  padding: 15px 18px;
+
+  font-size: 14px;
+  color: #a3a3a3;
+
+  border: 1px solid #e7e7e7;
+  border-radius: $border-r-sm;
+
+  span {
+    margin-right: 17px;
+
+    font-weight: 500;
+
+    pointer-events: none;
+  }
+
+  &-icon {
+    width: 14px;
+    height: 8px;
+
+    pointer-events: none;
+  }
+
+  &.active {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include media-tablet-lg {
+    display: inline-block;
+  }
+}

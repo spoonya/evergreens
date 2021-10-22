@@ -29,34 +29,40 @@
 }
 
 .drafts__filters {
-  display: flex;
+  @include filters;
+
   flex-wrap: wrap;
-  align-self: flex-start;
 
   margin-bottom: 2rem;
 
   @include media-tablet-lg {
-    overflow-x: scroll;
-
-    &::-webkit-scrollbar {
-      width: 0;
-      background: transparent;
-    }
-
-    scrollbar-width: none;
-
-    flex-wrap: nowrap;
+    align-items: flex-start;
   }
 
   &-form {
+    position: relative;
+
+    z-index: 2;
+
     width: 100%;
+
+    display: flex;
+    justify-content: center;
   }
 
-  &-item {
+  &-select {
+    @include select;
+  }
+
+  &-button {
     margin-bottom: 2rem;
 
     &:not(:last-child) {
       margin-right: 10px;
+
+      @include media-tablet-lg {
+        margin-right: 0;
+      }
     }
   }
 
@@ -107,6 +113,10 @@
       vertical-align: middle;
 
       pointer-events: none;
+
+      @include media-tablet-lg {
+        display: none;
+      }
     }
   }
 }

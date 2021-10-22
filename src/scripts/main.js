@@ -18,6 +18,7 @@ import {
 import controlTabs from './tabs';
 import lazyLoadObserver from './lazyload';
 import controlModal from './modal';
+import controlFilters from './filters';
 
 lazyLoadObserver.observe();
 
@@ -33,5 +34,6 @@ validateFormQuiz2();
 
 controlTabs();
 controlModal();
+controlFilters();
 
 initImagesCompare();

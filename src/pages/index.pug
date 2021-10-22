@@ -58,72 +58,75 @@ block content
 
     //Drafts
     section.drafts.drafts--filters
-      h2.drafts__title.container
-        span Используем современные тренды и технологии&nbsp;
-        |для создания неповторимых интерьеров
-      form.drafts__filters-form(action="#")
-        ul#filter-drafts.drafts__filters.container
-          li.drafts__filters-button
-            label
-              input(value="natural" name="form-drafts-filter" type="checkbox" checked hidden)
-              span
-                |Натуральные растения
-                +icon('drafts__filters-button-icon', 'close')
-          li.drafts__filters-button
-            label
-              input(value="synthetic" name="form-drafts-filter" type="checkbox" hidden)
-              span
-                |Искусственные растения
-                +icon('drafts__filters-button-icon', 'close')
-          li.drafts__filters-button
-            label
-              input(value="stabilized" name="form-drafts-filter" type="checkbox" hidden)
-              span
-                |Стабилизированные растения
-                +icon('drafts__filters-button-icon', 'close')
-          li.drafts__filters-button
-            label
-              input(value="vertical-greening" name="form-drafts-filter" type="checkbox" hidden)
-              span
-                |Вертикальное озеленение
-                +icon('drafts__filters-button-icon', 'close')
-          li.drafts__filters-button
-            label
-              input(value="phytowall" name="form-drafts-filter" type="checkbox" hidden)
-              span
-                |Фитостена
-                +icon('drafts__filters-button-icon', 'close')
-          li.drafts__filters-button
-            label
-              input(value="planter" name="form-drafts-filter" type="checkbox" hidden)
-              span
-                |Кашпо
-                +icon('drafts__filters-button-icon', 'close')
-          li.drafts__filters-button
-            label
-              input(value="panel" name="form-drafts-filter" type="checkbox" checked hidden)
-              span
-                |Панно
-                +icon('drafts__filters-button-icon', 'close')
-          li.drafts__filters-button
-            label
-              input(value="stabilized-moss" name="form-drafts-filter" type="checkbox" hidden)
-              span
-                |Стабилизированный мох
-                +icon('drafts__filters-button-icon', 'close')
-          li.drafts__filters-button
-            label
-              input(value="palms" name="form-drafts-filter" type="checkbox" hidden)
-              span
-                |Пальмы
-                +icon('drafts__filters-button-icon', 'close')
-          li.drafts__filters-button
-            label
-              input(value="vertical-garden" name="form-drafts-filter" type="checkbox" hidden)
-              span
-                |Вертикальный сад
-                +icon('drafts__filters-button-icon', 'close')
-
+      .container
+        h2.drafts__title
+          span Используем современные тренды и технологии&nbsp;
+          |для создания неповторимых интерьеров
+        form.drafts__filters-form(action="#")
+          #drafts-filters-select.drafts__filters-select
+            span
+            +icon('drafts__filters-select-icon', 'arrow-down')
+          ul#filter-drafts.drafts__filters
+            li.drafts__filters-button
+              label
+                input(value="natural" name="form-drafts-filter" type="checkbox" checked hidden)
+                span
+                  |Натуральные растения
+                  +icon('drafts__filters-button-icon', 'close')
+            li.drafts__filters-button
+              label
+                input(value="synthetic" name="form-drafts-filter" type="checkbox" hidden)
+                span
+                  |Искусственные растения
+                  +icon('drafts__filters-button-icon', 'close')
+            li.drafts__filters-button
+              label
+                input(value="stabilized" name="form-drafts-filter" type="checkbox" hidden)
+                span
+                  |Стабилизированные растения
+                  +icon('drafts__filters-button-icon', 'close')
+            li.drafts__filters-button
+              label
+                input(value="vertical-greening" name="form-drafts-filter" type="checkbox" hidden)
+                span
+                  |Вертикальное озеленение
+                  +icon('drafts__filters-button-icon', 'close')
+            li.drafts__filters-button
+              label
+                input(value="phytowall" name="form-drafts-filter" type="checkbox" hidden)
+                span
+                  |Фитостена
+                  +icon('drafts__filters-button-icon', 'close')
+            li.drafts__filters-button
+              label
+                input(value="planter" name="form-drafts-filter" type="checkbox" hidden)
+                span
+                  |Кашпо
+                  +icon('drafts__filters-button-icon', 'close')
+            li.drafts__filters-button
+              label
+                input(value="panel" name="form-drafts-filter" type="checkbox" checked hidden)
+                span
+                  |Панно
+                  +icon('drafts__filters-button-icon', 'close')
+            li.drafts__filters-button
+              label
+                input(value="stabilized-moss" name="form-drafts-filter" type="checkbox" hidden)
+                span
+                  |Стабилизированный мох
+                  +icon('drafts__filters-button-icon', 'close')
+            li.drafts__filters-button
+              label
+                input(value="palms" name="form-drafts-filter" type="checkbox" hidden)
+                span
+                  |Пальмы
+                  +icon('drafts__filters-button-icon', 'close')
+            li.drafts__filters-button
+              label
+                input(value="vertical-garden" name="form-drafts-filter" type="checkbox" hidden)
+                span
+                  |Вертикальный сад
+                  +icon('drafts__filters-button-icon', 'close')
       +draftsImages(
         [
           'draft-8.png',
@@ -536,7 +539,7 @@ block content
         h2.reviews__title Отзывы заказчиков
         .reviews__filters-wrapper
           #reviews-filters-select.reviews__filters-select
-            span Видео
+            span
             +icon('reviews__filters-select-icon', 'arrow-down')
           ul#filter-tabs.reviews__filters(data-tabs)
             li.reviews__filters-item

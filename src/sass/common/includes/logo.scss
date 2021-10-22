@@ -17,6 +17,15 @@
     max-width: 16.1rem;
   }
 
+  @include media-tablet-lg {
+    flex-direction: column;
+    align-items: unset;
+
+    &__descrip {
+      margin-top: 10px;
+    }
+  }
+
   @include media-tablet-sm {
     &__descrip {
       display: none;

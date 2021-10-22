@@ -32,6 +32,8 @@ function controlTabs() {
 
   let activeBtn = filter.querySelector('[data-tabby-default]');
 
+  filterListActive.textContent = activeBtn.textContent;
+
   activeBtn.classList.add(CLASSES.active);
 
   filter.addEventListener('click', (e) => {
