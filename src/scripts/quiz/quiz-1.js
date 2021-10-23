@@ -13,6 +13,7 @@ const currentSlideIndex = document.querySelector(
 const totalSlidesCount = document.querySelector(
   `#swiper-quiz-total-${idNumber}`
 );
+const controls = document.querySelector(`#quiz-controls-${idNumber}`);
 const buttonNext = document.querySelector(`#swiper-button-next-${idNumber}`);
 const buttonPrev = document.querySelector(`#swiper-button-prev-${idNumber}`);
 const counter = document.querySelector(`#quiz-counter-${idNumber}`);
@@ -34,6 +35,7 @@ const quizUploadError = document.querySelector(
 
 const swiperQuiz1 = new Swiper(`#swiper-quiz-${idNumber}`, {
   slidesPerColumnFill: 'row',
+  autoHeight: true,
 
   spaceBetween: 20,
 
@@ -60,8 +62,7 @@ const swiperQuiz1 = new Swiper(`#swiper-quiz-${idNumber}`, {
         currentSlideIndex,
         counter,
         progress,
-        buttonPrev,
-        buttonNext,
+        controls,
         progressLoading,
         progressLoadingPerc
       });

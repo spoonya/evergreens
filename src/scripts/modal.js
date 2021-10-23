@@ -76,4 +76,3 @@ function controlModal() {
 }
 
 export default controlModal;
-export { closeModal };

@@ -323,6 +323,6 @@ mixin sectionQuiz(quizId)
                         span.form__checkbox-txt
                           |Согласен с&nbsp;
                           button(type="button") Политикой конфиденциальности сайта
-            .quiz__controls
+            .quiz__controls(id=`quiz-controls-${quizId}`)
               button(id= `swiper-button-prev-${quizId}`).quiz__button-prev Вернуться назад
               +button(`swiper-button-next-${quizId}`, 'Далее', 'arrow-right')

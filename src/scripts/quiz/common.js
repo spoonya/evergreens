@@ -79,12 +79,10 @@ function setAnswers(idNumber) {
 
 function onSlideChange({
   idNumber,
-
   currentSlideIndex,
   counter,
   progress,
-  buttonPrev,
-  buttonNext,
+  controls,
   progressLoading,
   progressLoadingPerc
 }) {
@@ -93,8 +91,7 @@ function onSlideChange({
   } else {
     counter.style.display = 'none';
     progress.style.display = 'none';
-    buttonPrev.style.display = 'none';
-    buttonNext.style.display = 'none';
+    controls.style.display = 'none';
   }
 
   if (this.realIndex + 1 > QUIZ.questionsCount) {
