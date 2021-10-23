@@ -3,6 +3,7 @@ import 'core-js/es6/promise';
 import 'regenerator-runtime/runtime';
 
 import * as sliders from './sliders';
+import * as quizes from './quiz';
 import initImagesCompare from './compare';
 import {
   validateFormBiologist,

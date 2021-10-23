@@ -1,8 +1,6 @@
 const CLASSES = {
   active: 'active',
-  absolute: 'absolute',
   loading: 'loading',
-  headerDark: 'header--dark',
   modal: 'modal',
   modalContent: 'modal__content',
   scrollHidden: 'scroll-hidden'
@@ -19,7 +17,7 @@ const DOM = {
 
 const QUIZ = {
   notQuizSlidesCount: 2,
-  slidesCount: 5
+  questionsCount: 5
 };
 
 export { CLASSES, DOM, IDs, QUIZ };
