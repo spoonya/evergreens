@@ -101,7 +101,7 @@ mixin sectionQuiz(quizId)
             |и сроки озеленения
           h3.quiz__subtitle и получите индивидуальную подборку дизайнов  для вашего объекта под ваши пожелания
         .quiz__container
-          .quiz__block
+          .quiz__block(id=`quiz-block-${quizId}`)
             .quiz__counter(id= `quiz-counter-${quizId}`)
               |Вопрос&nbsp;
               span(id=`swiper-quiz-current-${quizId}`) 1

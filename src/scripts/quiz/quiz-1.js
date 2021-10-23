@@ -16,6 +16,7 @@ const totalSlidesCount = document.querySelector(
 const controls = document.querySelector(`#quiz-controls-${idNumber}`);
 const buttonNext = document.querySelector(`#swiper-button-next-${idNumber}`);
 const buttonPrev = document.querySelector(`#swiper-button-prev-${idNumber}`);
+const quizBlock = document.querySelector(`#quiz-block-${idNumber}`);
 const counter = document.querySelector(`#quiz-counter-${idNumber}`);
 const progress = document.querySelector(`#quiz-progress-${idNumber}`);
 const progressLoading = document.querySelector(
@@ -64,7 +65,8 @@ const swiperQuiz1 = new Swiper(`#swiper-quiz-${idNumber}`, {
         progress,
         controls,
         progressLoading,
-        progressLoadingPerc
+        progressLoadingPerc,
+        quizBlock
       });
     }
   },

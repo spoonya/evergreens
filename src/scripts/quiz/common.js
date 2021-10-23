@@ -84,7 +84,8 @@ function onSlideChange({
   progress,
   controls,
   progressLoading,
-  progressLoadingPerc
+  progressLoadingPerc,
+  quizBlock
 }) {
   if (this.realIndex + 1 <= QUIZ.questionsCount) {
     currentSlideIndex.textContent = this.realIndex + 1;
@@ -92,6 +93,7 @@ function onSlideChange({
     counter.style.display = 'none';
     progress.style.display = 'none';
     controls.style.display = 'none';
+    quizBlock.style.justifyContent = 'center';
   }
 
   if (this.realIndex + 1 > QUIZ.questionsCount) {
