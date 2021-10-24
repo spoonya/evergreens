@@ -7,6 +7,12 @@ import {
 } from './common';
 
 const idNumber = 1;
+const questionPlace = document.querySelector(
+  `#quiz-question-place-${idNumber}`
+);
+const questionSquare = document.querySelector(
+  `#quiz-question-square-${idNumber}`
+);
 const currentSlideIndex = document.querySelector(
   `#swiper-quiz-current-${idNumber}`
 );
@@ -80,7 +86,14 @@ const swiperQuiz1 = new Swiper(`#swiper-quiz-${idNumber}`, {
 if (document.querySelector(`#swiper-quiz-${idNumber}`)) {
   controlUpload({ idNumber, quizUploadError });
   controlProgress({ buttonPrev, buttonNext, progress });
-  controlRadioButtons({ quizDesignNo, quizDesignYes, quizUploadBlock });
+  controlRadioButtons({
+    slider: swiperQuiz1,
+    quizDesignNo,
+    quizDesignYes,
+    quizUploadBlock,
+    questionPlace,
+    questionSquare
+  });
 }
 
 export default swiperQuiz1;

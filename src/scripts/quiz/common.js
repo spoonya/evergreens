@@ -175,17 +175,40 @@ function controlProgress({ buttonPrev, buttonNext, progress }) {
   });
 }
 
-function controlRadioButtons({ quizDesignNo, quizDesignYes, quizUploadBlock }) {
+function controlRadioButtons({
+  slider,
+  quizDesignNo,
+  quizDesignYes,
+  quizUploadBlock,
+  questionPlace,
+  questionSquare
+}) {
   quizDesignNo.addEventListener('change', () => {
-    if (quizDesignNo.checked) {
-      quizUploadBlock.style.display = 'none';
-    }
+    quizUploadBlock.style.display = 'none';
+
+    setTimeout(() => {
+      slider.slideNext();
+    }, 500);
   });
 
   quizDesignYes.addEventListener('change', () => {
-    if (quizDesignYes.checked) {
-      quizUploadBlock.style.display = 'block';
-    }
+    quizUploadBlock.style.display = 'block';
+  });
+
+  questionPlace.querySelectorAll('[type="radio"]').forEach((el) => {
+    el.addEventListener('change', () => {
+      setTimeout(() => {
+        slider.slideNext();
+      }, 500);
+    });
+  });
+
+  questionSquare.querySelectorAll('[type="radio"]').forEach((el) => {
+    el.addEventListener('change', () => {
+      setTimeout(() => {
+        slider.slideNext();
+      }, 500);
+    });
   });
 }
 
