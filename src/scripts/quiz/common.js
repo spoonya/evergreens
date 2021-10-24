@@ -161,22 +161,26 @@ function controlUpload({ idNumber, quizUploadError }) {
   });
 }
 
-function controlProgress({ buttonPrev, buttonNext, progress }) {
-  buttonPrev.addEventListener('click', () => {
-    if (progress.value > 1) {
-      progress.value -= 1;
-    }
-  });
+function progressMinus(progress) {
+  if (progress.value > 1) {
+    progress.value -= 1;
+  }
+}
 
-  buttonNext.addEventListener('click', () => {
-    if (progress.value < QUIZ.questionsCount) {
-      progress.value += 1;
-    }
-  });
+function progressPlus(progress) {
+  if (progress.value < QUIZ.questionsCount) {
+    progress.value += 1;
+  }
+}
+
+function controlProgress({ buttonPrev, buttonNext, progress }) {
+  buttonPrev.addEventListener('click', () => progressMinus(progress));
+  buttonNext.addEventListener('click', () => progressPlus(progress));
 }
 
 function controlRadioButtons({
   slider,
+  progress,
   quizDesignNo,
   quizDesignYes,
   quizUploadBlock,
@@ -187,6 +191,7 @@ function controlRadioButtons({
     quizUploadBlock.style.display = 'none';
 
     setTimeout(() => {
+      progressPlus(progress);
       slider.slideNext();
     }, 500);
   });
@@ -198,6 +203,7 @@ function controlRadioButtons({
   questionPlace.querySelectorAll('[type="radio"]').forEach((el) => {
     el.addEventListener('change', () => {
       setTimeout(() => {
+        progressPlus(progress);
         slider.slideNext();
       }, 500);
     });
@@ -206,6 +212,7 @@ function controlRadioButtons({
   questionSquare.querySelectorAll('[type="radio"]').forEach((el) => {
     el.addEventListener('change', () => {
       setTimeout(() => {
+        progressPlus(progress);
         slider.slideNext();
       }, 500);
     });

@@ -88,6 +88,7 @@ if (document.querySelector(`#swiper-quiz-${idNumber}`)) {
   controlProgress({ buttonPrev, buttonNext, progress });
   controlRadioButtons({
     slider: swiperQuiz2,
+    progress,
     quizDesignNo,
     quizDesignYes,
     quizUploadBlock,
