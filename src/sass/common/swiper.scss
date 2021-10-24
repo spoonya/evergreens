@@ -6,6 +6,8 @@
 .swiper-button-next {
   top: 45%;
 
+  z-index: 5;
+
   &::after {
     display: flex;
     justify-content: center;
